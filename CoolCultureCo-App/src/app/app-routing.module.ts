@@ -13,13 +13,17 @@ import { FourohfourComponent } from './fourohfour/fourohfour.component';
 const routes: Routes = [
   // Pages
   // Landing Page 
-  { path: '', component: LandingComponent },
+  { path: 'landing', component: LandingComponent },
   { path: 'authentication', component: AuthenticationQuestionsComponent },
   // Employee Stocktake Dashboard
+  { path: '', redirectTo: 'dashboard', pathMatch: "full" },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'inventory', component: InventoryComponent },
   { path: 'creategelato', component: CreateComponent },
   // Components in Pages
+
+  // logout???
+  // { path: 'landing', component: LandingComponent },
   //Wild Card Route for 404 request
   {
     path: '**', pathMatch: 'full',

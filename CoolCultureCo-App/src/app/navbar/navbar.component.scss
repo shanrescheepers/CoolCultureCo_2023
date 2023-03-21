@@ -1,0 +1,124 @@
+.navbar {
+    background: #FA9EA2;
+    transition: all .3s ease;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+
+    height: 100vh;
+    box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+
+    &__logo-container {
+        display: flex;
+        align-items: center;
+        padding: 1px 1px 1px;
+        width: 100%;
+
+        &__logo {
+            background-image: url(../../assets/icons/toggle.svg);
+            width: 40px;
+            height: 40px;
+            min-width: 20px;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: cover;
+            // border-radius: 10px;
+            border: none;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            text-align: center;
+            align-content: center;
+            align-self: center;
+
+        }
+
+        &__logo-text {
+            margin-left: 1rem;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        &__button-close {
+            margin-left: 2px;
+            cursor: pointer;
+            // background-image: url(../../assets/icons/toggle.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 50px;
+            height: 20px;
+            border: none;
+            background-color: transparent;
+
+            &__icon {
+                height: 20px;
+            }
+        }
+
+
+    }
+
+    .navbar-collapsed {
+        width: 14rem;
+    }
+
+    &__nav {
+        list-style: none;
+        padding: 0.938rem;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: calc(100% - 3.65rem);
+        cursor: pointer;
+
+        &__item {
+            width: 100%;
+            margin-bottom: 0.625rem;
+
+            &__link {
+                display: flex;
+                align-items: center;
+                height: 3rem;
+                color: #f3f3f3;
+                text-decoration: none;
+                transition: color .2s ease;
+
+                &__icon {
+                    font-size: 22px;
+                    width: 2rem;
+                    min-width: 2rem;
+                    margin: 0 0.5rem;
+                    text-align: center;
+
+                }
+
+                &__text {
+                    margin-left: 1.5rem;
+                }
+            }
+        }
+
+        &__item:hover {
+            &__link:hover {
+                background-color: #fff;
+                color: #000;
+
+            }
+
+        }
+    }
+
+}
+
+.active {
+    background-color: #eeb6c3;
+    border-radius: 10px;
+
+    .navbar__nav__item__link__icon {}
+
+    .navbar__nav__item__link__text {
+        color: #000;
+    }
+}

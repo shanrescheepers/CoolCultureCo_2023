@@ -1,3 +1,174 @@
 <div class="dashboard-page" id="dashboard">
-    works
+
+
+    <div class="dashboard-page__inner">
+        <div class="dashboard-page__inner__logo"></div>
+        <div class="dashboard-page__inner__locations">
+
+            <form class="dashboard-page__inner__locations__input">
+                <mat-form-field class="employee-authentication-page__inner__input__text">
+
+                    <mat-label class="employee-authentication-page__inner__input__text__label">
+                        <p style="color: black;">Current Location : </p>
+                    </mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let location of locations" [value]="location.value">
+                            {{location.viewValue}}
+                        </mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+
+                <button class="dashboard-page__inner__locations__verify" mat-icon-button
+                    aria-label="Example icon-button with heart icon">CHANGE
+                </button>
+            </form>
+        </div>
+        <div class="dashboard-page__inner__flavouroftheweek">
+            <div class="dashboard-page__inner__flavouroftheweek__inner">
+
+                <h2 class="dashboard-page__inner__flavouroftheweek__inner__heading">Flavour of the Week</h2>
+                <div class="dashboard-page__inner__flavouroftheweek__inner__scribble"></div>
+
+
+                <div class="dashboard-page__inner__flavouroftheweek__inner__flavour"
+                    src="../../assets/gelatos/flavour-of-the-week.svg"></div>
+
+                <h3 class="dashboard-page__inner__flavouroftheweek__inner__h3">Oreo Overload</h3>
+                <h4 class="dashboard-page__inner__flavouroftheweek__inner__originalornot">Original Churn</h4>
+                <h4 class="dashboard-page__inner__flavouroftheweek__inner__description">Gelato Base, Oreo Cookies,
+                    Condensed Milk, Vanilla Extract</h4>
+                <div class="dashboard-page__inner__flavouroftheweek__inner__buttons">
+                    <button class="dashboard-page__inner__flavouroftheweek__inner__buttons__stock" mat-icon-button
+                        aria-label="Example icon-button with heart icon">12
+                    </button>
+                    <button class="dashboard-page__inner__flavouroftheweek__inner__buttons__update" mat-icon-button
+                        aria-label="Example icon-button with heart icon">UPDATE
+                    </button>
+                </div>
+                <button class="dashboard-page__inner__flavouroftheweek__inner__create" mat-icon-button
+                    aria-label="Example icon-button with heart icon">CREATE
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+    <h1 class="dashboard-page__h1card">CEREAL CHURNS</h1>
+    <div class="dashboard-page__cards-content">
+
+
+        <div class="dashboard-page__cards-content__cards">
+
+            <mat-card class="dashboard-page__cards-content__cards__item">
+                <div class="dashboard-page__cards-content__cards__item__img">
+                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
+                </div>
+                <p class="dashboard-page__cards-content__cards__item__description">Cocopops Condensedmilk</p>
+                <button class="dashboard-page__cards-content__cards__item__stock" mat-icon-button
+                    aria-label="Example icon-button with heart icon">12
+                </button>
+            </mat-card>
+
+            <mat-card class="dashboard-page__cards-content__cards__item">
+                <div class="dashboard-page__cards-content__cards__item__img">
+                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
+                </div>
+                <p class="dashboard-page__cards-content__cards__item__description">Cocopops Condensedmilk</p>
+                <button class="dashboard-page__cards-content__cards__item__stock" mat-icon-button
+                    aria-label="Example icon-button with heart icon">12
+                </button>
+            </mat-card>
+
+            <mat-card class="dashboard-page__cards-content__cards__item">
+                <div class="dashboard-page__cards-content__cards__item__img">
+                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
+                </div>
+                <p class="dashboard-page__cards-content__cards__item__description">Cocopops Condensedmilk</p>
+                <button class="dashboard-page__cards-content__cards__item__stock" mat-icon-button
+                    aria-label="Example icon-button with heart icon">12
+                </button>
+            </mat-card>
+
+            <mat-card class="dashboard-page__cards-content__cards__item">
+                <div class="dashboard-page__cards-content__cards__item__img">
+                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
+                </div>
+                <p class="dashboard-page__cards-content__cards__item__description">Cocopops Condensedmilk</p>
+                <button class="dashboard-page__cards-content__cards__item__stock" mat-icon-button
+                    aria-label="Example icon-button with heart icon">12
+                </button>
+            </mat-card>
+
+            <mat-card class="dashboard-page__cards-content__cards__item">
+                <div class="dashboard-page__cards-content__cards__item__img">
+                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
+                </div>
+                <p class="dashboard-page__cards-content__cards__item__description">Cocopops Condensedmilk</p>
+                <button class="dashboard-page__cards-content__cards__item__stock" mat-icon-button
+                    aria-label="Example icon-button with heart icon">12
+                </button>
+            </mat-card>
+
+
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="dashboard-page__original-cards-content">
+        <h1 class="dashboard-page__original-cards-content__h1">ORIGINAL CHURNS</h1>
+
+        <div class="dashboard-page__original-cards-content__cards">
+            <mat-card class="dashboard-page__original-cards-content__cards__item">
+                <div class="dashboard-page__original-cards-content__cards__item__img">
+                    <img src="../../assets/gelatos/cottoncandymoons.svg">
+                </div>
+                <p class="dashboard-page__original-cards-content__cards__item__description">Cotton Candy Moons</p>
+                <button class="dashboard-page__original-cards-content__cards__item__stock" mat-icon-button
+                    aria-label="Example icon-button with heart icon">12
+                </button>
+            </mat-card>
+
+            <mat-card class="dashboard-page__original-cards-content__cards__item">
+                <div class="dashboard-page__original-cards-content__cards__item__img">
+                    <img src="../../assets/gelatos/cottoncandymoons.svg">
+                </div>
+                <p class="dashboard-page__original-cards-content__cards__item__description">Cotton Candy Moons</p>
+                <button class="dashboard-page__original-cards-content__cards__item__stock" mat-icon-button
+                    aria-label="Example icon-button with heart icon">12
+                </button>
+            </mat-card>
+
+            <mat-card class="dashboard-page__original-cards-content__cards__item">
+                <div class="dashboard-page__original-cards-content__cards__item__img">
+                    <img src="../../assets/gelatos/cottoncandymoons.svg">
+                </div>
+                <p class="dashboard-page__original-cards-content__cards__item__description">Cotton Candy Moons</p>
+                <button class="dashboard-page__original-cards-content__cards__item__stock" mat-icon-button
+                    aria-label="Example icon-button with heart icon">12
+                </button>
+            </mat-card>
+
+            <mat-card class="dashboard-page__original-cards-content__cards__item">
+                <div class="dashboard-page__original-cards-content__cards__item__img">
+                    <img src="../../assets/gelatos/cottoncandymoons.svg">
+                </div>
+                <p class="dashboard-page__original-cards-content__cards__item__description">Cotton Candy Moons</p>
+                <button class="dashboard-page__original-cards-content__cards__item__stock" mat-icon-button
+                    aria-label="Example icon-button with heart icon">12
+                </button>
+            </mat-card>
+
+            <mat-card class="dashboard-page__original-cards-content__cards__item">
+                <div class="dashboard-page__original-cards-content__cards__item__img">
+                    <img src="../../assets/gelatos/cottoncandymoons.svg">
+                </div>
+                <p class="dashboard-page__original-cards-content__cards__item__description">Cotton Candy Moons</p>
+                <button class="dashboard-page__original-cards-content__cards__item__stock" mat-icon-button
+                    aria-label="Example icon-button with heart icon">12
+                </button>
+            </mat-card>
+
+
+        </div>
+    </div>
 </div>

@@ -20,6 +20,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { BodyComponent } from './body/body.component';
 @NgModule({
 
   declarations: [
@@ -32,7 +34,8 @@ import { RouterModule } from '@angular/router';
     CreateComponent,
     AuthenticationQuestionsComponent,
     LandingComponent,
-    FourohfourComponent
+    FourohfourComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatButtonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
