@@ -7,14 +7,14 @@ import { CreateComponent } from './create/create.component';
 import { InventoryComponent } from './inventory/inventory.component';
 // import { NavbarComponent } from './navbar/navbar.component';
 import { UserauthComponent } from './userauth/userauth.component';
-// import { AuthenticationQuestionsComponent } from './authentication-questions/authentication-questions.component';
+import { AuthenticationQuestionsComponent } from './authentication-questions/authentication-questions.component';
 import { FourohfourComponent } from './fourohfour/fourohfour.component';
 
 const routes: Routes = [
   // Pages
   // Landing Page 
   { path: '', component: LandingComponent },
-
+  { path: 'authentication', component: AuthenticationQuestionsComponent },
   // Employee Stocktake Dashboard
   { path: 'dashboard', component: DashboardComponent },
   { path: 'inventory', component: InventoryComponent },

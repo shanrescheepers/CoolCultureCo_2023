@@ -1,1 +1,18 @@
-<p>authentication-questions works!</p>
+<div class="employee-authentication-page">
+    <div class="employee-authentication-page__inner">
+        <div class="employee-authentication-page__inner__logo"></div>
+        <h1 class="employee-authentication-page__inner__h1">WHAT'S THE NAME OF THIS FLAVOUR GELATO ? </h1>
+        <div class="employee-authentication-page__inner__auth-image"></div>
+
+        <form class="employee-authentication-page__inner__input">
+            <mat-form-field class="employee-authentication-page__inner__input__text">
+                <mat-label style="color: rgb(255, 255, 255);">Ex. Oreo/Captain Crunch etc.</mat-label>
+                <input matInput placeholder="Ex. Oreo" value="Name of Gelato?">
+
+            </mat-form-field>
+            <button class="employee-authentication-page__inner__input__verify" routerLink="#dashboard" mat-icon-button
+                aria-label="Example icon-button with heart icon" [routerLink]="'/dashboard'">VERIFY ME</button>
+        </form>
+
+    </div>
+</div>

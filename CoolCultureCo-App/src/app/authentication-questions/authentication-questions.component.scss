@@ -1,0 +1,104 @@
+@font-face {
+    font-family: Summer;
+    src: url('../../assets/fonts/Summer\ Square-Rough.otf') format('truetype');
+}
+
+@font-face {
+    font-family: Summer2;
+    src: url('../../assets/fonts/Summer\ Square.otf') format('truetype');
+}
+
+@font-face {
+    font-family: Sweet;
+    src: url('../../assets/fonts/Sweet\ Affogato.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Welcome;
+    src: url('../../assets/fonts/Welcome\ Summer.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Heading;
+    src: url('../../assets/fonts/FredokaOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Barlow;
+    src: url('../../assets/fonts/Barlow-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: BarlowRegular;
+    src: url('../../assets/fonts/Barlow-Regular.ttf') format('truetype');
+}
+
+.employee-authentication-page {
+    background-image: url(../../assets/ccc-assets/background-imge.png);
+    height: 100%;
+    display: grid;
+    justify-self: center;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: auto;
+        justify-self: center;
+        text-align: center;
+        grid-template-rows: 200px 100px 300px 100px 100px;
+
+        &__logo {
+            background-image: url(../../assets/ccc-assets/ccc-logo.svg);
+            height: 200px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        &__h1 {
+            font-family: Summer;
+        }
+
+        &__auth-image {
+            background-image: url(../../assets/gelatos/auth-oreo.png);
+            margin: 0;
+            justify-self: center;
+            padding: 0;
+            background-size: contain;
+            height: 200px;
+            background-repeat: no-repeat;
+            width: 200px;
+        }
+
+        &__input {
+            display: grid;
+            grid-template-columns: 400px 100px;
+            min-width: 150px;
+            max-width: 500px;
+            width: 100%;
+            height: 50px;
+            background-color: #ffffff;
+            color: rgb(96, 96, 96);
+            border: 1px #c2185b solid;
+            border-radius: 10px;
+            text-align: center;
+            align-items: center;
+            padding-left: 8px;
+
+
+            &__verify {
+                background-color: #E97C94;
+                border-radius: 10px;
+                border: 0px;
+                height: 50px;
+                width: 101px;
+                cursor: pointer;
+                margin-top: -7px;
+                color: white;
+            }
+        }
+
+    }
+
+    .mat-input-element {
+        caret-color: #c2185b;
+    }
+}
