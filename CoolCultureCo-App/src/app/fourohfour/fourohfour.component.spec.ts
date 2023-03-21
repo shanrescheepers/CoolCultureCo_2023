@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VanillaVillaComponent } from './vanilla-villa.component';
+import { FourohfourComponent } from './fourohfour.component';
 
-describe('VanillaVillaComponent', () => {
-  let component: VanillaVillaComponent;
-  let fixture: ComponentFixture<VanillaVillaComponent>;
+describe('FourohfourComponent', () => {
+  let component: FourohfourComponent;
+  let fixture: ComponentFixture<FourohfourComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VanillaVillaComponent ]
+      declarations: [ FourohfourComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VanillaVillaComponent);
+    fixture = TestBed.createComponent(FourohfourComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

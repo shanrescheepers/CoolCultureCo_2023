@@ -1,0 +1,173 @@
+@font-face {
+    font-family: Summer;
+    src: url('../../assets/fonts/Summer\ Square-Rough.otf') format('truetype');
+}
+
+@font-face {
+    font-family: Summer2;
+    src: url('../../assets/fonts/Summer\ Square.otf') format('truetype');
+}
+
+@font-face {
+    font-family: Sweet;
+    src: url('../../assets/fonts/Sweet\ Affogato.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Welcome;
+    src: url('../../assets/fonts/Welcome\ Summer.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Heading;
+    src: url('../../assets/fonts/FredokaOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Barlow;
+    src: url('../../assets/fonts/Barlow-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: BarlowRegular;
+    src: url('../../assets/fonts/Barlow-Regular.ttf') format('truetype');
+}
+
+.landing-component {
+    background-image: url(../../assets/ccc-assets/background-image-with-svg.png);
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 90% 40%;
+    margin: 0px;
+    padding: 0px;
+
+    &__logo {
+        margin: 8px;
+    }
+
+    &__login {
+        text-align: right;
+        width: 140px;
+        height: 40px;
+        text-align: left;
+        align-content: center;
+        // margin-top: -170px;
+        padding-right: 20px;
+        border: 0px;
+        background-color: transparent;
+        cursor: pointer;
+        font-family: BarlowRegular;
+        font-weight: 200;
+        justify-content: right;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 8px;
+
+        &__left {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 8px;
+            margin-left: 32px;
+
+            &__img {
+
+                margin: 16px;
+                height: 340px;
+            }
+
+            &__slogan {
+                margin: 8px;
+                height: 120px;
+            }
+        }
+
+        &__right {
+            display: grid;
+            grid-template-rows: 60px 170px 45px 60px 250px 50px;
+
+
+            &__h1 {
+                font-family: Summer;
+                font-size: 45px;
+            }
+
+            &__h3 {
+                font-family: Heading;
+                font-size: 40px;
+                line-height: 40px;
+            }
+
+            &__subscribe {
+                border-radius: 10px;
+                width: 100px;
+                height: 40px;
+                border: 0px;
+                background-color: #E97C94;
+                color: #ffff;
+                cursor: pointer;
+            }
+
+            &__subscribe-h5 {
+                font-size: 16px;
+                color: #E76A86;
+                font-family: BarlowRegular;
+                font-weight: 200;
+            }
+
+            &__madeby-h5 {
+                font-size: 18px;
+                font-family: Heading;
+                font-weight: 100;
+                letter-spacing: 1px;
+                word-spacing: 1px;
+                line-height: 20px;
+
+            }
+
+            &__socials {
+                display: grid;
+                margin-right: -85px;
+                grid-template-columns: 50px 40px 20px;
+                grid-gap: 16px;
+                justify-self: right;
+                text-align: right;
+
+                &__ig {
+                    background-image: url(../../assets/icons/instagram.png);
+                    border: 0px;
+                    background-repeat: no-repeat;
+                    height: 50px;
+                    width: 50px;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+
+                &__fb {
+                    background-image: url(../../assets/icons/facebook.png);
+                    border: 0px;
+                    background-repeat: no-repeat;
+                    height: 50px;
+                    width: 50px;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+
+                &__contactus {
+                    background-image: url(../../assets/icons/callus.png);
+                    border: 0px;
+                    background-repeat: no-repeat;
+                    height: 50px;
+                    width: 50px;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

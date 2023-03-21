@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChillaxCornerComponent } from './chillax-corner.component';
+import { LandingComponent } from './landing.component';
 
-describe('ChillaxCornerComponent', () => {
-  let component: ChillaxCornerComponent;
-  let fixture: ComponentFixture<ChillaxCornerComponent>;
+describe('LandingComponent', () => {
+  let component: LandingComponent;
+  let fixture: ComponentFixture<LandingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChillaxCornerComponent ]
+      declarations: [ LandingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChillaxCornerComponent);
+    fixture = TestBed.createComponent(LandingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

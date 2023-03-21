@@ -9,11 +9,12 @@ import { UserauthComponent } from './userauth/userauth.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { CreateComponent } from './create/create.component';
-import { ChillaxCornerComponent } from './chillax-corner/chillax-corner.component';
-import { VanillaVillaComponent } from './vanilla-villa/vanilla-villa.component';
-import { CoolCultureCornerComponent } from './cool-culture-corner/cool-culture-corner.component';
-import { AuthenticationQuestionsComponent } from './authentication-questions/authentication-questions.component';
 
+import { AuthenticationQuestionsComponent } from './authentication-questions/authentication-questions.component';
+import { LandingComponent } from './landing/landing.component';
+import { FourohfourComponent } from './fourohfour/fourohfour.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MaterialModule } from 'src/material/material.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,15 +23,15 @@ import { AuthenticationQuestionsComponent } from './authentication-questions/aut
     DashboardComponent,
     InventoryComponent,
     CreateComponent,
-    ChillaxCornerComponent,
-    VanillaVillaComponent,
-    CoolCultureCornerComponent,
-    AuthenticationQuestionsComponent
+    AuthenticationQuestionsComponent,
+    LandingComponent,
+    FourohfourComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
