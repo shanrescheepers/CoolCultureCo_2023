@@ -4,8 +4,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { navbarData } from './nav-data';
 import { MatIconModule } from '@angular/material/icon';
 import { url } from 'inspector';
+import { pathToFileURL } from 'url';
 
 // import { EventEmitter } from 'stream';
+
+
 
 interface NavbarToggle {
   screenWidth: number;
@@ -17,8 +20,12 @@ interface NavbarToggle {
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
+
+
 export class NavbarComponent implements OnInit {
   @Output() onToggleNavbar: EventEmitter<NavbarToggle> = new EventEmitter();
+
+  // Create = pathToFileURL('../../assets/icons/toggle.svg')
 
   collapsed = false;
   screenWidth = 0;
@@ -38,8 +45,9 @@ export class NavbarComponent implements OnInit {
   }
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  checkStatus: boolean | undefined;
+  ngOnInit() { }
+
 
 }
 function imageUrl(arg0: string) {

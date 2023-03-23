@@ -1,25 +1,26 @@
+import { fileURLToPath } from "url";
 
 
 export const navbarData = [
     {
         routeLink: 'dashboard',
-        icon: "",
+        icon: "../../assets/icons/dashboard.svg",
         label: 'Dashboard',
 
     },
     {
         routeLink: 'creategelato',
-        icon: "",
+        icon: "../../assets/icons/create-icon.svg",
         label: 'Create'
     },
     {
         routeLink: 'inventory',
-        icon: "",
+        icon: "../../assets/icons/inventory.svg",
         label: 'Inventory'
     },
     {
         routeLink: 'landing',
-        icon: "",
+        icon: "../../assets/icons/logout.svg",
         label: 'Log Out'
     }
 

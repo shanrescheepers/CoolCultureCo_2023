@@ -1,6 +1,10 @@
 <!-- <app-navbar></app-navbar> -->
 <!-- <app-landing></app-landing> -->
-<app-navbar (onToggleNavbar)="onToggleNavbar($event)"></app-navbar>
+
+<ng-container>
+    <app-navbar (onToggleNavbar)="onToggleNavbar($event)"></app-navbar>
+
+</ng-container>
 <!-- <app-body>
     [collapsed]="isNavbarCollapsed"
     [screenWidth]="screenWidth"

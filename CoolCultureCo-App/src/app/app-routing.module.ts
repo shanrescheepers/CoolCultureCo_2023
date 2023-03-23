@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'creategelato', component: CreateComponent },
   // Components in Pages
 
+
   // logout???
   // { path: 'landing', component: LandingComponent },
   //Wild Card Route for 404 request
@@ -35,4 +36,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

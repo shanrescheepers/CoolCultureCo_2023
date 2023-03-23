@@ -16,16 +16,17 @@
 
         &__logo {
             background-image: url(../../assets/icons/toggle.svg);
-            width: 40px;
-            height: 40px;
+
+            width: 30px;
+            height: 30px;
             min-width: 20px;
             background-color: transparent;
             background-repeat: no-repeat;
             background-size: cover;
             // border-radius: 10px;
             border: none;
-            padding: 10px;
-            margin: 10px;
+            padding: 16px;
+            margin: 16px;
             cursor: pointer;
             text-align: center;
             align-content: center;
@@ -53,15 +54,16 @@
 
             &__icon {
                 height: 20px;
+                background-color: #000;
             }
         }
 
 
     }
 
-    .navbar-collapsed {
-        width: 14rem;
-    }
+    // .navbar-collapsed {
+    //     width: 14rem;
+    // }
 
     &__nav {
         list-style: none;
@@ -77,6 +79,7 @@
             width: 100%;
             margin-bottom: 0.625rem;
 
+
             &__link {
                 display: flex;
                 align-items: center;
@@ -87,10 +90,13 @@
 
                 &__icon {
                     font-size: 22px;
-                    width: 2rem;
-                    min-width: 2rem;
-                    margin: 0 0.5rem;
+
+                    // min-width: 0.1rem;
+                    // margin: 0 0.5rem;
                     text-align: center;
+                    background-color: #000;
+                    color: #000;
+                    z-index: 1;
 
                 }
 
@@ -113,10 +119,10 @@
 }
 
 .active {
-    background-color: #eeb6c3;
+    // background-color: #eeb6c3;
     border-radius: 10px;
 
-    .navbar__nav__item__link__icon {}
+
 
     .navbar__nav__item__link__text {
         color: #000;
