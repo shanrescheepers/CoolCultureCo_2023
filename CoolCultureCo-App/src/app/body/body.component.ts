@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+interface NavbarToggle {
+  screenWidth: number;
+  collapsed: boolean;
+}
+
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
@@ -18,6 +23,14 @@ export class BodyComponent implements OnInit {
       styleClass = 'body-md-screen';
     }
     return styleClass;
+  }
+
+
+  isNavbarCollapsed = false;
+
+  onToggleNavbar(data: NavbarToggle): void {
+    this.screenWidth = data.screenWidth;
+    this.isNavbarCollapsed = data.collapsed;
   }
 
   constructor() { }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 interface NavbarToggle {
   screenWidth: number;
@@ -13,10 +14,16 @@ interface NavbarToggle {
 export class AppComponent {
   title = 'CoolCultureCo-App';
 
+
+
+
   isNavbarCollapsed = false;
   screenWidth = 0;
   onToggleNavbar(data: NavbarToggle): void {
     this.screenWidth = data.screenWidth;
     this.isNavbarCollapsed = data.collapsed;
   }
+
+
+
 }

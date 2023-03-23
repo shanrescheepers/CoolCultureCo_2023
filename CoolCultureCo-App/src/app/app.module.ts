@@ -22,6 +22,8 @@ import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { BodyComponent } from './body/body.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
 
   declarations: [
@@ -47,7 +49,9 @@ import { BodyComponent } from './body/body.component';
     MatButtonModule,
     MaterialModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

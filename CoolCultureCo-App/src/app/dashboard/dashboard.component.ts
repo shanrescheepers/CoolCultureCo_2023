@@ -4,6 +4,12 @@ interface Location {
   value: string;
   viewValue: string;
 }
+
+interface NavbarToggle {
+  screenWidth: number;
+  collapsed: boolean;
+}
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: '././dashboard.component.html',
@@ -13,6 +19,12 @@ interface Location {
 
 export class DashboardComponent implements OnInit {
 
+  isNavbarCollapsed = false;
+  screenWidth = 0;
+  onToggleNavbar(data: NavbarToggle): void {
+    this.screenWidth = data.screenWidth;
+    this.isNavbarCollapsed = data.collapsed;
+  }
 
   constructor() {
 
