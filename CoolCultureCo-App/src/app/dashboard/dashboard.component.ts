@@ -1,9 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { LocationService, Location } from '../services/location.service';
+import { Observable } from 'rxjs'
 
-interface Location {
-  value: string;
-  viewValue: string;
-}
 
 interface NavbarToggle {
   screenWidth: number;
@@ -18,6 +17,7 @@ interface NavbarToggle {
 
 
 export class DashboardComponent implements OnInit {
+  public locations$!: Observable<Location[]>;
 
   isNavbarCollapsed = false;
   screenWidth = 0;
@@ -26,17 +26,40 @@ export class DashboardComponent implements OnInit {
     this.isNavbarCollapsed = data.collapsed;
   }
 
-  constructor() {
 
+
+  constructor(private http: HttpClient, private locationService: LocationService) {
+    this.loadLocations()
+    this.loadGelato("asd")
   }
 
   ngOnInit(): void {
 
   }
+  locations: any[] = [];
+  loadLocations() {
+    this.http
+      .get("http://localhost:3000/api/locations")
+      .subscribe((locations: any) => {
+        console.log(locations);
 
-  locations: Location[] = [
-    { value: 'Cool Culture', viewValue: 'Cool Culture' },
-    { value: 'Chill Corner', viewValue: 'Chill Corner' },
-    { value: 'Smooth Street', viewValue: 'Smooth Stree' },
-  ];
+        this.locations = locations;
+
+      })
+  }
+
+  gelatos: any[] = [];
+  locationId = "643edbbd23927cccb0aaab39";
+
+  loadGelato(category: any) {
+    this.http
+      .get("http://localhost:3000/api/gelatos/asd/" + category)
+      .subscribe((gelatos: any) => {
+        console.log(gelatos);
+
+        this.gelatos = gelatos;
+      })
+  }
+
+
 }

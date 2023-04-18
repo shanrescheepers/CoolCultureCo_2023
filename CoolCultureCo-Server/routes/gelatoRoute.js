@@ -14,10 +14,21 @@ router.get("/api/gelato/:id", async (req, res) => {
     res.json(gelato);
 });
 
+//get by location
 router.get('/api/gelatos/:id', async (req, res) => {
     const gelato = await Gelatos.find({
         location: req.params.id
     });
+    res.send(gelato);
+});
+
+//get by location by category
+router.get('/api/gelatos/:id/:category', async (req, res) => {
+    const gelato = await Gelatos.find({
+        location: req.params.id,
+        churnCategory: req.params.category
+    });
+
     res.send(gelato);
 });
 

@@ -42,14 +42,24 @@
         display: grid;
         grid-template-columns: 400px 720px 400px;
 
+        &__logo {
+            background-image: url(../../assets/ccc-assets/ccc-logo.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 200px;
+            width: 200px;
+            margin-top: 10px;
+            margin-left: 100px;
+        }
+
         &__locations {
             display: grid;
-
+            margin-top: 8px;
 
             &__input {
                 display: grid;
                 // margin-left: 400px;
-                margin-top: -24px;
+
                 grid-template-columns: 400px 100px;
                 min-width: 150px;
                 max-width: 500px;
@@ -98,7 +108,7 @@
             background-image: url(../../assets/ccc-assets/bg-image-dash.svg);
             background-repeat: no-repeat;
             display: grid;
-            margin-top: -32px;
+
             margin-left: -40px;
 
             &__inner {
@@ -228,5 +238,117 @@
 
             }
         }
+
+        &__cards {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 1fr 1fr;
+
+            &__item {
+                width: 160px;
+                height: 150px;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 100px 20px 10px;
+                text-align: center;
+                background-color: #F6F2EF;
+                justify-items: center;
+            }
+
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        margin-top: -700px;
+        height: 600px;
+        grid-gap: 24px;
+        width: 700px;
+        margin-left: 160px;
+
+
+
+        &__gelato {
+            width: 120px;
+            height: 110px;
+            display: grid;
+            text-align: center;
+            background-color: #F6F2EF;
+            justify-items: center;
+            font-size: 10px;
+            color: #2b2b2b;
+
+
+
+            &__buttons {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: auto;
+
+                &__stock {
+                    color: #1c1c1c;
+                    background-color: #3cdfdccb;
+                    height: 35px;
+                    border-radius: 5px;
+                    border-bottom-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    font-family: Barlow;
+
+                }
+
+                &__create {
+                    color: #060606;
+                    font-weight: lighter;
+                    font-family: Sweet;
+
+                    background-color: #e97c94d4;
+                    height: 35px;
+                    width: 75px;
+                    text-align: center;
+                    border-radius: 5px;
+                    border-bottom-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    font-size: 16px;
+                    justify-content: center;
+                    justify-items: center;
+                }
+
+                &__create:hover {
+                    color: #ffffff;
+                    font-weight: lighter;
+                    font-family: Sweet;
+
+                    background-color: #e85373d4;
+                    height: 35px;
+                    width: 75px;
+                    text-align: center;
+                    border-radius: 5px;
+                    border-bottom-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    font-size: 16px;
+                    justify-content: center;
+                    justify-items: center;
+                }
+
+
+            }
+
+            &__image,
+            img {
+                height: 50px;
+                width: 40px;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+        }
+
+        &__gelato:hover {
+            box-shadow: 10px 10px 39px 17px rgba(239, 76, 127, 0.43);
+            -webkit-box-shadow: 10px 10px 39px 17px rgba(239, 76, 127, 0.43);
+            -moz-box-shadow: 10px 10px 39px 17px rgba(239, 76, 127, 0.43);
+        }
+
     }
 }
