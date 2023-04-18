@@ -23,6 +23,7 @@ import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { BodyComponent } from './body/body.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 
@@ -50,8 +51,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     RouterModule,
     MatIconModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

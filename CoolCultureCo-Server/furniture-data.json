@@ -1,0 +1,83 @@
+[
+    {
+        "name": "LALA GLASS COFFEE TABLE",
+        "type": "coffee-table",
+        "image": "assets/coffee-table-3.png",
+        "material": ["8mm Tempered Glass Top", "5mm Tempered Glass Shelf",  "Melamine", "Metal"],
+        "price": 999,
+        "amount": 1
+    },
+    {
+        "name": "MAC VELVET SLEEPER COUCH",
+        "type": "couch",
+        "image": "assets/couch-4.png",
+        "material": ["Velvet", "Plywood", "Metal"],
+        "price": 3599,
+        "amount": 4
+    },
+    {
+        "name": "Jupiter Fur Stool",
+        "type": "stool",
+        "image": "assets/stool-2.png",
+        "material": ["Artificial Fur", "Metal"],
+        "price": 449,
+        "amount": 1
+    },
+    {
+        "name": "NINO VELVET 3 SEATER",
+        "type": "couch",
+        "image": "assets/couch-2.png",
+        "material": ["Velvet", "Metal", "Webbing & Foam"],
+        "price": 6599,
+        "amount": 4
+    },
+    {
+        "name": "LIVORNO ROUND COFFEE TABLE",
+        "type": "coffee-table",
+        "image": "assets/coffee-table-1.png",
+        "material": ["Melamine"],
+        "price": 1099,
+        "amount": 4
+    },
+    {
+        "name": "Jen Velvet Stool",
+        "type": "stool",
+        "image": "assets/stool-1.png",
+        "material": ["Velvet", "Pine Wood"],
+        "price": 249,
+        "amount": 5
+    },
+
+    {
+        "name": "DEWI COFFEE TABLE",
+        "type": "coffee-table",
+        "image": "assets/coffee-table-2.png",
+        "material": ["Melamine",  "Rattan"],
+        "price": 1599,
+        "amount": 4
+    },
+    {
+        "name": "NINO FABRIC CORNER CHAISE",
+        "type": "couch",
+        "image": "assets/couch-3.png",
+        "material": ["100% Polyester Fabric", "Solid Pine", "Metal", "Webbing & Foam"],
+        "price": 7999,
+        "amount": 4
+    },
+    {
+        "name": "ARGO SET OF 2 TABLES",
+        "type": "side-table",
+        "image": "assets/side-table-1.png",
+        "material": ["Melamine", "Metal"],
+        "price": 899,
+        "amount": 20
+    },
+    {
+        "name": "ANTONIO GENUINE LEATHER 3 SEATER",
+        "type": "couch",
+        "image": "assets/couch-1.png",
+        "material": ["100% Bovine Leather", "Solid Pine Wood", "Spring & Straps"],
+        "price": 17999,
+        "amount": 3
+    }
+]

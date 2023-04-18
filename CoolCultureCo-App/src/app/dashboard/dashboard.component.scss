@@ -90,7 +90,7 @@
             }
 
             &__verify {
-                background-color: #ffffff;
+                background-color: #F6F2EF;
                 border-radius: 10px;
                 border: 1px solid #eaabb9;
                 height: 52px;
@@ -109,16 +109,46 @@
             background-image: url(../../assets/ccc-assets/bg-image-dash.svg);
             background-repeat: no-repeat;
             display: grid;
-            margin-left: -100px;
+            width: 400px;
+            border-radius: 30px;
+            background: linear-gradient(318deg, rgba(255, 255, 255, 1) 15%, rgba(241, 170, 191, 0.659) 46%, rgba(243, 84, 124, 0.391) 67%);
+            margin-left: -40px;
 
             &__inner {
                 display: grid;
-                grid-template-columns: auto;
-                margin-top: 8px;
+                grid-template-columns: 1fr;
+                justify-self: center;
+                padding-top: 8px;
+                margin-top: 24px;
                 text-align: left;
+                width: 300px;
+                grid-template-rows: 40px 80px 80px 40px 40px 40px;
 
-                width: 200px;
-                grid-template-rows: 100px 50px 230px 40px 40px 80px 80px 50px 50px;
+                &__adres {
+                    font-family: Heading;
+                }
+
+                &__number {
+                    font-family: Heading;
+                }
+
+                &__email {
+                    font-family: Heading;
+                }
+
+                &__gelatos {
+                    font-family: Heading;
+                    text-align: left;
+
+                    &__ol {
+                        font-family: BarlowRegular;
+                        text-align: left;
+                        justify-self: left;
+                        margin-left: -30px;
+                    }
+                }
+
+
 
                 &__heading {
                     font-family: Welcome;
@@ -141,15 +171,7 @@
 
                 }
 
-                &__flavour {
-                    width: 300px;
-                    height: 215px;
-                    background-size: cover;
-                    text-align: center;
-                    margin-left: 50px;
-                    background-repeat: no-repeat;
-                    background-image: url("../../assets/gelatos/flavour-of-the-week.svg");
-                }
+
 
                 &__h3 {
                     font-family: Heading;
@@ -159,16 +181,6 @@
                     font-size: 18px;
                 }
 
-                &__originalornot {
-                    font-family: BarlowRegular;
-                    padding-left: 60px;
-                    color: #fff;
-                }
-
-                &__description {
-                    padding-left: 60px;
-                    color: #fff;
-                }
 
                 &__buttons {
                     display: grid;
@@ -176,64 +188,7 @@
                     padding-left: 60px;
                     grid-gap: 30px;
 
-                    &__stock {
-                        background-color: #FEDBDA;
-                        width: 120px;
-                        border-radius: 10px;
-                        border-top-right-radius: 0px;
-                        border-bottom-left-radius: 0px;
-                        color: #111;
-                    }
 
-                    &__update {
-                        color: #111;
-                        background-color: #FEDBDA;
-                        width: 120px;
-                        border-radius: 10px;
-                        border-top-right-radius: 0px;
-                        border-bottom-left-radius: 0px;
-                    }
-
-                    &__update:hover {
-                        color: #ffffff;
-                        background-color: #060606;
-                        width: 120px;
-                        border-radius: 10px;
-                        border-top-right-radius: 0px;
-                        border-bottom-left-radius: 0px;
-                    }
-
-
-
-                    &__stock:hover {
-                        color: #ffffff;
-                        background-color: #060606;
-                        width: 120px;
-                        border-radius: 10px;
-                        border-top-right-radius: 0px;
-                        border-bottom-left-radius: 0px;
-                    }
-
-                }
-
-                &__create {
-                    color: #111;
-                    background-color: #FEDBDA;
-                    width: 280px;
-                    border-radius: 10px;
-                    border-top-right-radius: 0px;
-                    border-bottom-left-radius: 0px;
-                    margin-left: 60px;
-                }
-
-                &__create:hover {
-                    color: #ffffff;
-                    background-color: #060606;
-                    width: 280px;
-                    border-radius: 10px;
-                    border-top-right-radius: 0px;
-                    border-bottom-left-radius: 0px;
-                    margin-left: 60px;
                 }
 
             }
@@ -243,14 +198,14 @@
     }
 
     &__h1card {
-        font-family: Heading;
+        font-family: Summer;
         margin-top: -650px;
         margin-left: 100px;
     }
 
-    &__cards-content {
+    &__cerealcards-content {
         display: grid;
-        margin-top: -600px;
+
         margin-left: 100px;
         overflow-y: scroll;
         overflow-x: hidden;
@@ -261,7 +216,9 @@
         scrollbar-width: 1px !important;
 
 
-        &__cards {
+        &__cards1 {
+            overflow-y: scroll;
+            overflow-x: hidden;
             padding-top: 10px;
             position: relative;
             display: grid;
@@ -270,6 +227,7 @@
             width: 900px;
             grid-template-columns: 170px 170px 170px 170px;
             grid-template-rows: 200px;
+
 
 
             &__item {
@@ -308,41 +266,44 @@
                 }
             }
         }
+
+
     }
 
     &__original-cards-content {
         display: grid;
-        margin-top: -330px;
         grid-template-rows: 1fr 1fr;
-        margin-left: 100px;
+        overflow-y: scroll;
+        overflow-x: hidden;
         height: 250px;
         width: 850px;
         overflow-y: scroll;
         overflow-x: hidden;
-
         scrollbar-width: 1px !important;
         grid-template-rows: auto;
 
 
-
-
-
-        // scrollbar-width: 1px !important;
-
         &__h1 {
-            font-family: Heading;
+            padding-top: 60px;
+            font-family: Summer;
+            margin-left: 100px;
         }
 
-        &__cards {
+        // CHURNN CARDS
+        &__churncards {
             padding-top: 10px;
+            margin-left: 100px;
             position: relative;
             display: grid;
             grid-template-rows: 1fr;
             grid-gap: 40px;
             width: 900px;
             grid-template-columns: 170px 170px 170px 170px;
-            grid-template-rows: 200px;
-
+            height: 200px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            overflow-x: hidden;
 
             &__item {
                 width: 160px;

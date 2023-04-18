@@ -4,7 +4,10 @@ interface NavbarToggle {
   screenWidth: number;
   collapsed: boolean;
 }
-
+interface Location {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-create',
@@ -22,5 +25,10 @@ export class CreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  locations: Location[] = [
+    { value: 'Cool Culture', viewValue: 'Cool Culture' },
+    { value: 'Chill Corner', viewValue: 'Chill Corner' },
+    { value: 'Smooth Street', viewValue: 'Smooth Stree' },
+  ];
 
 }

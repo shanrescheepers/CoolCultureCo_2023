@@ -1,3 +1,60 @@
 <app-navbar (onToggleNavbar)="onToggleNavbar($event)"></app-navbar>
 
 <p>create works!</p>
+<div class="create-page" id="create">
+    <div class="create-page__inner">
+        <div class="create-page__inner__logo">
+            x
+        </div>
+        <div class="create-page__inner__locations">
+
+            <form class="create-page__inner__locations__input">
+                <mat-form-field class="employee-authentication-page__inner__input__text">
+
+                    <mat-label class="employee-authentication-page__inner__input__text__label" style="color: black;">
+                        <p style="color: black;">Current Location : </p>
+                    </mat-label>
+                    <mat-select style="color: black;">
+                        <mat-option *ngFor="let location of locations" [value]="location.value">
+                            {{location.viewValue}}
+                        </mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+
+                <button class="create-page__inner__locations__verify" mat-icon-button
+                    aria-label="Example icon-button with heart icon">CHANGE
+                </button>
+            </form>
+        </div>
+
+        <div class="create-page__inner__flavouroftheweek">
+            <div class="create-page__inner__flavouroftheweek__inner">
+
+                <h2 class="create-page__inner__flavouroftheweek__inner__heading">Flavour of the Week</h2>
+                <div class="create-page__inner__flavouroftheweek__inner__scribble"></div>
+
+
+                <div class="create-page__inner__flavouroftheweek__inner__flavour"
+                    src="../../assets/gelatos/flavour-of-the-week.svg"></div>
+
+                <h3 class="create-page__inner__flavouroftheweek__inner__h3">Oreo Overload</h3>
+                <h4 class="create-page__inner__flavouroftheweek__inner__originalornot">Original Churn</h4>
+                <h4 class="create-page__inner__flavouroftheweek__inner__description">Gelato Base, Oreo Cookies,
+                    Condensed Milk, Vanilla Extract</h4>
+                <div class="create-page__inner__flavouroftheweek__inner__buttons">
+                    <button class="create-page__inner__flavouroftheweek__inner__buttons__stock" mat-icon-button
+                        aria-label="Example icon-button with heart icon">12
+                    </button>
+                    <button class="create-page__inner__flavouroftheweek__inner__buttons__update" mat-icon-button
+                        aria-label="Example icon-button with heart icon">UPDATE
+                    </button>
+                </div>
+                <button class="create-page__inner__flavouroftheweek__inner__create" mat-icon-button
+                    aria-label="Example icon-button with heart icon">CREATE
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
