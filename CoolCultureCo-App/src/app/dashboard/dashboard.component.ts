@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { LocationService, Location } from '../services/location.service';
 import { Observable } from 'rxjs'
+import { LocationService, Location, selectedLocation } from '../services/location.service';
 
 
 interface NavbarToggle {
@@ -17,7 +17,9 @@ interface NavbarToggle {
 
 
 export class DashboardComponent implements OnInit {
-  public locations$!: Observable<Location[]>;
+  selectedOption = '643f0566e625d71d4fab844f';
+  public locations$: Observable<Location[]>;
+  public selectedlocation$: Observable<selectedLocation[]>;
 
   isNavbarCollapsed = false;
   screenWidth = 0;
@@ -28,34 +30,41 @@ export class DashboardComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient, private locationService: LocationService) {
-    this.loadLocations()
+  constructor(private locationService: LocationService, private http: HttpClient) {
     this.loadGelato("asd")
   }
 
   ngOnInit(): void {
+    this.locations$ = this.locationService.getLocations();
+    this.selectedlocation$ = this.locationService.getLocation();
 
+    this.locationService.setLocation(this.selectedOption);
+
+    this.locations$.subscribe((locations) => {
+      // console.log(locations);
+    })
+
+    this.selectedlocation$.subscribe((selectedlocation) => {
+      console.log(selectedlocation);
+    })
+
+
+
+    // this.locations$.subscribe((locations) => {
+    //   console.log(locations);
+    // })
+
+    this.locationService.init()
   }
-  locations: any[] = [];
-  loadLocations() {
-    this.http
-      .get("http://localhost:3000/api/locations")
-      .subscribe((locations: any) => {
-        console.log(locations);
 
-        this.locations = locations;
-
-      })
-  }
 
   gelatos: any[] = [];
-  locationId = "643edbbd23927cccb0aaab39";
 
   loadGelato(category: any) {
     this.http
       .get("http://localhost:3000/api/gelatos/asd/" + category)
       .subscribe((gelatos: any) => {
-        console.log(gelatos);
+        // console.log(gelatos);
 
         this.gelatos = gelatos;
       })

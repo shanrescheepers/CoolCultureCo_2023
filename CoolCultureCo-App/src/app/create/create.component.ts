@@ -17,6 +17,7 @@ interface Location {
 export class CreateComponent implements OnInit {
   isNavbarCollapsed = false;
   screenWidth = 0;
+  selected = 'option2';
   onToggleNavbar(data: NavbarToggle): void {
     this.screenWidth = data.screenWidth;
     this.isNavbarCollapsed = data.collapsed;

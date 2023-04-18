@@ -10,17 +10,21 @@ interface NavbarToggle {
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.scss']
 })
+
 export class InventoryComponent implements OnInit {
   isNavbarCollapsed = false;
   screenWidth = 0;
+  selected = 'option2';
   onToggleNavbar(data: NavbarToggle): void {
     this.screenWidth = data.screenWidth;
     this.isNavbarCollapsed = data.collapsed;
   }
+
+
   constructor() { }
 
   ngOnInit(): void {
 
   }
-
+  locations: any[] = [];
 }

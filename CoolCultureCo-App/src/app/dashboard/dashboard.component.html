@@ -13,8 +13,8 @@
                     <mat-label class="employee-authentication-page__inner__input__text__label" style="color: black;">
                         <p style="color: black;">Current Location : </p>
                     </mat-label>
-                    <mat-select style="color: black;">
-                        <mat-option *ngFor="let location of locations" [value]="location._id">
+                    <mat-select [value]="selectedOption" namestyle="color: black;">
+                        <mat-option *ngFor="let location of locations$ | async" [value]="location._id">
                             {{location.name}}
                         </mat-option>
                     </mat-select>
@@ -29,7 +29,9 @@
 
         <div class="dashboard-page__inner__flavouroftheweek">
             <div class="dashboard-page__inner__flavouroftheweek__inner">
-                <h3 class="dashboard-page__inner__flavouroftheweek__inner__adres">Name : []</h3>
+                <h3 class="dashboard-page__inner__flavouroftheweek__inner__adres"
+                    *ngIf="selectedlocation$ | async as location"> Name :{{location}}
+                </h3>
                 <h3 class="dashboard-page__inner__flavouroftheweek__inner__adres">Location : []</h3>
                 <div class="dashboard-page__inner__flavouroftheweek__inner__img"> <img
                         class="dashboard-page__inner__flavouroftheweek__inner__img">
