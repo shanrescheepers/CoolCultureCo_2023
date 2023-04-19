@@ -44,14 +44,12 @@
         grid-template-columns: 400px 400px 300px auto;
 
         &__filter {
-            margin-left: 8px;
-            margin-top: 8px;
-            background-color: #FA9EA2;
-            border-radius: 15px;
-            height: 80px;
-            display: grid;
+            background-image: url(../../assets/ccc-assets/melt.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-left: -200px;
+            height: 110px;
             width: 200px;
-            color: #060606;
 
         }
 
@@ -67,30 +65,25 @@
 
         &__locations {
             display: grid;
-            margin-top: -1px;
-            margin-left: 150px;
-            padding: 10px;
-            height: 60px;
-            border-radius: 15px;
+            background-image: url(../../assets/ccc-assets/melt2.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            height: 110px;
+            width: 250px;
 
             &__input {
                 display: grid;
-                // margin-left: 400px;
 
-                grid-template-columns: 200px 100px;
-                min-width: 90px;
-                max-width: 200px;
-
+                width: 100px;
                 height: 70px;
-                // background-color: #ffffff;
                 color: rgb(96, 96, 96);
-                border: 1px #eaabb9 solid;
                 border-radius: 15px;
                 text-align: center;
                 align-items: center;
                 padding-left: 8px;
                 z-index: 1;
-                background-color: #FA9EA2;
+
 
                 &__text {
                     color: #111;
@@ -321,7 +314,7 @@
                 &__stock {
                     display: grid;
                     color: #1c1c1c;
-                    border-color: 1px solid #3cdfdccb;
+                    border-color: 1px inside solid #3cdfdccb;
 
                     height: 20px;
                     width: 50px;
@@ -380,9 +373,9 @@
         }
 
         &__gelato:hover {
-            box-shadow: 10px 10px 20px 7px rgba(239, 212, 76, 0.43);
-            -webkit-box-shadow: 10px 10px 20px 7px rgba(239, 212, 76, 0.43);
-            -moz-box-shadow: 10px 10px 20px 7px rgba(239, 212, 76, 0.43);
+            box-shadow: 10px 10px 20px 7px #98587B;
+            -webkit-box-shadow: 10px 10px 20px 7px #98587B;
+            -moz-box-shadow: 10px 10px 20px 7px #98587B;
         }
 
     }

@@ -12,17 +12,18 @@ import { Router } from '@angular/router';
 export class AuthenticationQuestionsComponent {
   gelatoAuthAnswer = new FormControl('');
   gelatoAuthResponse = new FormControl('');
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   verifyAuthAnswer() {
     this.gelatoAuthResponse.setValue('Oreo');
-    if (this.gelatoAuthAnswer.value == "Oreo") {
+    if (this.gelatoAuthAnswer.value.toLowerCase() == "oreo") {
       this.gelatoAuthResponse.setValue("Correct! You're definitely a Gelato Lover <3")
       console.log("Works");
       this.router.navigate(['/dashboard']);
     }
     else {
-      this.gelatoAuthResponse.setValue("Wrong! Start melting... ")
+      this.gelatoAuthResponse.setValue("Wrong answer! Don't melt, you have another try... ")
       console.log("Loser");
     }
 

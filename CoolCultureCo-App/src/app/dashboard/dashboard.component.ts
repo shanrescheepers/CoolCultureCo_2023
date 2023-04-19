@@ -1,12 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs'
-import { LocationService, Location, selectedLocation } from '../services/location.service';
+import { LocationService, Location } from '../services/location.service';
+
 
 
 interface NavbarToggle {
   screenWidth: number;
   collapsed: boolean;
+}
+
+interface LocationId {
+  _id?: string;
+  name?: string;
+  address?: string;
+  image?: string;
+  managerNumber?: Number;
+  email?: string;
 }
 
 @Component({
@@ -17,9 +27,8 @@ interface NavbarToggle {
 
 
 export class DashboardComponent implements OnInit {
-  selectedOption = '643f0566e625d71d4fab844f';
+  selectedOption = '64401ef1012f7d87438755ca';
   public locations$: Observable<Location[]>;
-  public selectedlocation$: Observable<selectedLocation[]>;
 
   isNavbarCollapsed = false;
   screenWidth = 0;
@@ -28,47 +37,46 @@ export class DashboardComponent implements OnInit {
     this.isNavbarCollapsed = data.collapsed;
   }
 
-
-
   constructor(private locationService: LocationService, private http: HttpClient) {
-    this.loadGelato("asd")
+    this.loadGelato(this.selectedOption, "")
+    this.loadLocation(this.selectedOption);
   }
 
   ngOnInit(): void {
     this.locations$ = this.locationService.getLocations();
-    this.selectedlocation$ = this.locationService.getLocation();
-
-    this.locationService.setLocation(this.selectedOption);
 
     this.locations$.subscribe((locations) => {
       // console.log(locations);
     })
-
-    this.selectedlocation$.subscribe((selectedlocation) => {
-      console.log(selectedlocation);
-    })
-
-
-
-    // this.locations$.subscribe((locations) => {
-    //   console.log(locations);
-    // })
-
     this.locationService.init()
   }
 
+  location: LocationId = {};
+  loadLocation(id: any) {
+    this.http
+      .get("http://localhost:3000/api/location/" + id)
+      .subscribe((loca: any) => {
+        console.log(loca);
+        this.location = loca;
+      })
+  }
 
   gelatos: any[] = [];
 
-  loadGelato(category: any) {
+  loadGelato(id: any, category: any) {
     this.http
-      .get("http://localhost:3000/api/gelatos/asd/" + category)
+      .get("http://localhost:3000/api/gelatos/" + id + "/" + category)
       .subscribe((gelatos: any) => {
-        // console.log(gelatos);
-
         this.gelatos = gelatos;
       })
   }
 
+  updateLocation($event: any) {
+    // console.log($event.value);
+    this.selectedOption = $event.value;
+    this.loadLocation(this.selectedOption)
+    this.loadGelato(this.selectedOption, "")
+
+  }
 
 }

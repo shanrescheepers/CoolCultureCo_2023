@@ -17,7 +17,19 @@ const IngredientsSchema = mongoose.Schema({
     location: {
         required: true,
         type: String,
-    }
+    },
+    cerealChurn: {
+        required: true,
+        type: Boolean,
+    },
+    originalChurn: {
+        required: true,
+        type: Boolean,
+    },
+    candyChurn: {
+        required: true,
+        type: Boolean,
+    },
 });
 
 module.exports = mongoose.model('ingredients', IngredientsSchema);

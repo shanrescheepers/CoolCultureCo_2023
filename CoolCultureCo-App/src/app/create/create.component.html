@@ -14,9 +14,10 @@
                     <mat-label class="employee-authentication-page__inner__input__text__label" style="color: black;">
                         <p style="color: black;">Current Location : </p>
                     </mat-label>
-                    <mat-select style="color: black;">
-                        <mat-option *ngFor="let location of locations" [value]="location.value">
-                            {{location.viewValue}}
+                    <mat-select [value]="selectedOption" namestyle="color: black;"
+                        (selectionChange)="updateLocation($event)">
+                        <mat-option *ngFor="let location of locations$ | async" [value]="location._id">
+                            {{location.name}}
                         </mat-option>
                     </mat-select>
 
@@ -27,7 +28,7 @@
         </div>
 
         <div class="create-page__inner__filter" style="color: #000000cb;">
-            <mat-form-field appearance="fill" style="color: #000000cb;">
+            <mat-form-field appearance="fill" style="color: #000000cb; width: 170px; margin-left: 10px;">
                 <mat-label style="color: #000000cb;">Filter</mat-label>
                 <mat-select [(value)]="selected" style="color: #000000cb;">
                     <mat-option>None</mat-option>
@@ -74,7 +75,30 @@
     </div>
 
     <div class="create-page__cards">
-        <mat-card class="create-page__cards__gelato">
+
+        <mat-card class="create-page__cards__gelato" *ngFor="let ingredient of ingredients" style="margin-top: -30px;">
+            <div class="create-page__cards__gelato__image" style="margin-top: -10px;">
+                <img src="../../assets/gelatos/cocopos_condensedmilk.png">
+            </div>
+            <p class="create-page__cards__gelato__p"
+                style="font-weight: 200; text-align: left; line-height: 8.5px; font-weight: bold;">
+                {{ingredient.name}}
+            </p>
+            <p class="create-page__cards__gelato__ingredients">{{ingredient.ingredients}}</p>
+            <div class="create-page__cards__gelato__buttons">
+                <button class="create-page__cards__gelato__buttons__stock" mat-icon-button aria-label="stock">
+                    <p class="create-page__cards__gelato__buttons__stock"
+                        style="padding-top: 5px; border: 1px solid #3cdfdccb; padding-bottom: 2px; margin-top: 2px;">
+                        Stock</p>
+                </button>
+                <button class="create-page__cards__gelato__buttons__create" mat-icon-button aria-label="create">
+                    <p class="create-page__cards__gelato__buttons__create" style="padding-top: 6px;">
+                        Create</p>
+                </button>
+            </div>
+        </mat-card>
+
+        <!-- <mat-card class="create-page__cards__gelato">
             <div class="create-page__cards__gelato__image" style="margin-top: -10px;">
                 <img src="../../assets/gelatos/cocopos_condensedmilk.png">
             </div>
@@ -293,26 +317,6 @@
                 </button>
             </div>
         </mat-card>
-
-        <mat-card class="create-page__cards__gelato">
-            <div class="create-page__cards__gelato__image" style="margin-top: -10px;">
-                <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-            </div>
-            <p class="create-page__cards__gelato__p" style="font-weight: 200; text-align: left;">Cocopops Condensedmilk
-            </p>
-            <p class="create-page__cards__gelato__ingredients">Ingredients, ingredient, ingredient</p>
-            <div class="create-page__cards__gelato__buttons">
-                <button class="create-page__cards__gelato__buttons__stock" mat-icon-button aria-label="stock">
-                    <p class="create-page__cards__gelato__buttons__stock"
-                        style="padding-top: 5px; border: 1px solid #3cdfdccb; padding-bottom: 2px; margin-top: 2px;">
-                        Stock</p>
-                </button>
-                <button class="create-page__cards__gelato__buttons__create" mat-icon-button aria-label="create">
-                    <p class="create-page__cards__gelato__buttons__create" style="padding-top: 6px;">
-                        Create</p>
-                </button>
-            </div>
-        </mat-card>
         <mat-card class="create-page__cards__gelato">
             <div class="create-page__cards__gelato__image" style="margin-top: -10px;">
                 <img src="../../assets/gelatos/cocopos_condensedmilk.png">
@@ -351,7 +355,7 @@
                         Create</p>
                 </button>
             </div>
-        </mat-card>
+        </mat-card> -->
 
     </div>
 

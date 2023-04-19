@@ -25,8 +25,7 @@ router.get('/api/gelatos/:id', async (req, res) => {
 //get by location by category
 router.get('/api/gelatos/:id/:category', async (req, res) => {
     const gelato = await Gelatos.find({
-        location: req.params.id,
-        churnCategory: req.params.category
+        location: req.params.id
     });
 
     res.send(gelato);
@@ -35,15 +34,16 @@ router.get('/api/gelatos/:id/:category', async (req, res) => {
 
 //Add a ingredient
 router.post('/api/addgelato', (req, res) => {
-
     console.log(req.body);
     const gelatos = new Gelatos({
         name: req.body.name,
         quantity: req.body.quantity,
         image: req.body.image,
-        churnCategory: req.body.churnCategory,
         ingredients: req.body.ingredients,
         location: req.body.location,
+        cerealChurn: req.body.cerealChurn,
+        originalChurn: req.body.originalChurn,
+        candyChurn: req.body.candyChurn,
     });
 
 
@@ -67,15 +67,16 @@ router.patch('/api/updategelato/:id', async (req, res) => {
                 name: req.body.name,
                 quantity: req.body.quantity,
                 image: req.body.image,
-                churnCategory: req.body.churnCategory,
                 ingredients: req.body.ingredients,
                 location: req.body.location,
+                cerealChurn: req.body.cerealChurn,
+                originalChurn: req.body.originalChurn,
+                candyChurn: req.body.candyChurn,
             }
         }
     )
 
     res.json(gelatos);
 });
-
 
 module.exports = router;

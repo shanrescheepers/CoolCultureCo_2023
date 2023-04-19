@@ -13,7 +13,8 @@
                     <mat-label class="employee-authentication-page__inner__input__text__label" style="color: black;">
                         <p style="color: black;">Current Location : </p>
                     </mat-label>
-                    <mat-select [value]="selectedOption" namestyle="color: black;">
+                    <mat-select [value]="selectedOption" namestyle="color: black;"
+                        (selectionChange)="updateLocation($event)">
                         <mat-option *ngFor="let location of locations$ | async" [value]="location._id">
                             {{location.name}}
                         </mat-option>
@@ -21,28 +22,25 @@
 
                 </mat-form-field>
 
-                <button class="dashboard-page__inner__locations__verify" mat-icon-button
-                    aria-label="Example icon-button with heart icon">CHANGE
-                </button>
             </form>
         </div>
 
         <div class="dashboard-page__inner__flavouroftheweek">
             <div class="dashboard-page__inner__flavouroftheweek__inner">
-                <h3 class="dashboard-page__inner__flavouroftheweek__inner__adres"
-                    *ngIf="selectedlocation$ | async as location"> Name :{{location}}
+                <h3 class=" dashboard-page__inner__flavouroftheweek__inner__adres"> Name : {{location.name}}
                 </h3>
-                <h3 class="dashboard-page__inner__flavouroftheweek__inner__adres">Location : []</h3>
-                <div class="dashboard-page__inner__flavouroftheweek__inner__img"> <img
+                <h3 class="dashboard-page__inner__flavouroftheweek__inner__adres">Location : {{location.address}}</h3>
+                <div class="dashboard-page__inner__flavouroftheweek__inner__img" style="margin-bottom: 20px;"> <img
+                        src="../assets/ccc-assets/{{location.image}}"
                         class="dashboard-page__inner__flavouroftheweek__inner__img">
-                    img here</div>
-                <h3 class="dashboard-page__inner__flavouroftheweek__inner__number"> Manager's Number : []</h3>
-                <h3 class="dashboard-page__inner__flavouroftheweek__inner__email">Email : []</h3>
+                </div>
+                <h3 class="dashboard-page__inner__flavouroftheweek__inner__number"> Manager's Number : +
+                    {{location.managerNumber}}</h3>
+                <h3 class="dashboard-page__inner__flavouroftheweek__inner__email">Email : {{location.email}}</h3>
                 <div class="dashboard-page__inner__flavouroftheweek__inner__gelatos">
                     <h3 class="dashboard-page__inner__flavouroftheweek__inner__gelatos">Gelatos Available :</h3>
                     <ol class="dashboard-page__inner__flavouroftheweek__inner__gelatos__ol">
-                        <li>Gelato one</li>
-                        <li>Gelato one</li>
+
                         <li>Gelato one</li>
                         <li>Gelato one</li>
                         <li>Gelato one</li>

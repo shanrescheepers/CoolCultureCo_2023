@@ -41,14 +41,27 @@
 
     &__innerinner {
         display: grid;
-        grid-template-columns: 400px 400px 200px;
+        grid-template-columns: 400px 400px auto;
 
         &__notified {
-            margin-left: 300px;
-            width: 300px;
-            margin-top: -40px;
-            font-family: Summer2;
+            margin-left: 580px;
+            background-image: url(../../assets/ccc-assets/blob.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 400px;
+            height: 170px;
+            margin-top: -70px;
+            z-index: 111;
 
+            &__p {
+                margin-left: 40px;
+                padding-left: 20px;
+                line-height: 30px;
+                width: 170px;
+                padding-top: 39px;
+                font-family: Summer2;
+                font-size: 20px;
+            }
         }
 
         &__logo {
@@ -63,30 +76,25 @@
 
         &__locations {
             display: grid;
-            margin-top: -1px;
-            margin-left: 150px;
-            padding: 10px;
-            height: 60px;
-            border-radius: 15px;
+            background-image: url(../../assets/ccc-assets/melt2.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            height: 110px;
+            width: 250px;
 
             &__input {
                 display: grid;
-                // margin-left: 400px;
 
-                grid-template-columns: 200px 100px;
-                min-width: 90px;
-                max-width: 200px;
-
+                width: 100px;
                 height: 70px;
-                // background-color: #ffffff;
                 color: rgb(96, 96, 96);
-                border: 1px #eaabb9 solid;
                 border-radius: 15px;
                 text-align: center;
                 align-items: center;
                 padding-left: 8px;
                 z-index: 1;
-                background-color: #FA9EA2;
+
 
                 &__text {
                     color: #111;
@@ -117,14 +125,13 @@
         }
 
         &__filter {
-            margin-left: 8px;
-            margin-top: 8px;
-            background-color: #FA9EA2;
-            border-radius: 15px;
-            height: 80px;
-            display: grid;
+
+            background-image: url(../../assets/ccc-assets/melt.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-left: -200px;
+            height: 110px;
             width: 200px;
-            color: #060606;
         }
     }
 
@@ -158,7 +165,7 @@
 
                     &__stock {
                         color: #1c1c1c;
-                        background-color: #3cdfdccb;
+                        // border: 2px solid #D06C6E;
                         height: 35px;
                         border-radius: 5px;
                         border-bottom-left-radius: 0px;

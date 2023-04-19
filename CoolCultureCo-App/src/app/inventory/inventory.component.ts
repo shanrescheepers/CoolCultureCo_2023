@@ -1,9 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs'
+import { LocationService, Location } from '../services/location.service';
+
 
 interface NavbarToggle {
   screenWidth: number;
   collapsed: boolean;
 }
+
+interface LocationId {
+  _id?: string;
+  name?: string;
+  address?: string;
+  image?: string;
+  managerNumber?: Number;
+  email?: string;
+}
+
 
 @Component({
   selector: 'app-inventory',

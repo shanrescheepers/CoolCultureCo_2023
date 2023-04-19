@@ -32,6 +32,9 @@ router.post('/api/addingredient', (req, res) => {
         quantity: req.body.quantity,
         image: req.body.image,
         location: req.body.location,
+        cerealChurn: req.body.cerealChurn,
+        originalChurn: req.body.originalChurn,
+        candyChurn: req.body.candyChurn,
     });
 
 
@@ -56,6 +59,9 @@ router.patch('/api/updateingredient/:id', async (req, res) => {
                 quantity: req.body.quantity,
                 image: req.body.image,
                 location: req.body.location,
+                cerealChurn: req.body.cerealChurn,
+                originalChurn: req.body.originalChurn,
+                candyChurn: req.body.candyChurn,
             }
         }
     )
