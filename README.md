@@ -32,7 +32,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/shanrescheepers/CoolCultureCo_2023">
-    <img src="./CoolCultureCo-App/src/assets/ccc-assets/ccc-logo 1.png" alt="Logo" width="120" height="120">
+    <img src="./CoolCultureCo-App/src/assets/ccc-assets/ccc-logo 1.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Cool Culture co - App</h3>
@@ -222,6 +222,8 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [issues-url]: https://github.com/shanrescheepers/CoolCultureCo_2023/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: hhttps://www.linkedin.com/in/shanr%C3%A9-scheepers-09185b213/
+[license-shield]: https://img.shields.io/github/license/shanrescheepers/CoolCultureCo_2023svg?style=for-the-badge
+[license-url]: https://github.com/shanrescheepers/CoolCultureCo_2023s/blob/master/LICENSE.txt
 [product-screenshot]: ./CoolCultureCo-App/src/assets/ccc-assets/productImage1.png
 [product-screenshot]: ./CoolCultureCo-App/src/assets/ccc-assets/productImage2.png
 [product-screenshot]: ./CoolCultureCo-App/src/assets/ccc-assets/productImage3.png

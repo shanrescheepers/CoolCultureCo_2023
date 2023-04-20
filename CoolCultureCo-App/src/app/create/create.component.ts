@@ -39,6 +39,19 @@ interface Gelato {
   quantity?: Number;
 }
 
+interface Ingredient {
+  _id: string;
+  name: string;
+  location: string;
+  image: string;
+  quantity: Number;
+  candyChurn: boolean;
+  cerealChurn: boolean;
+  originalChurn: boolean;
+}
+
+
+
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -176,9 +189,10 @@ export class DialogOverviewExampleDialog {
       this.loadIngredients(this.data.location, encodeURIComponent(element))
     }
 
-    console.log(this.ingredientsAvaliable);
+    console.log(this.ingredientsHold);
 
   }
+  ingredientsHold: Ingredient[] = {};
 
   ingredientsAvaliable: any = [];
   ingredientSingle: any = {};
@@ -189,7 +203,7 @@ export class DialogOverviewExampleDialog {
       .get("http://localhost:3000/api/ingredientsname/" + id + "/" + category)
       .subscribe((loadingredients: any) => {
         console.log(loadingredients[0]);
-        this.ingredientsAvaliable.push(loadingredients[0])
+        this.ingredientsHold.push(loadingredients[0])
       })
 
   }
