@@ -80,9 +80,10 @@
             background-image: url(../../assets/ccc-assets/melt2.svg);
             background-repeat: no-repeat;
             background-size: contain;
-            margin-top: -10px;
+            margin-top: -5px;
             height: 120px;
             width: 250px;
+            padding-left: 5px;
 
             &__input {
                 display: grid;
@@ -93,9 +94,9 @@
                 border-radius: 15px;
                 text-align: center;
                 align-items: center;
-                padding-left: 15px;
+                padding-left: 8px;
                 z-index: 1;
-                padding-top: 6px;
+
 
                 &__text {
                     color: #111;

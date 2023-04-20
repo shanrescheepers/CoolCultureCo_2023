@@ -14,9 +14,10 @@
                     <mat-label class="inventory-page__innerinner__input__text__label" style="color: black;">
                         <p style="color: black;">Current Location : </p>
                     </mat-label>
-                    <mat-select style="color: black;">
-                        <mat-option *ngFor="let location of locations" [value]="location.value">
-                            {{location.viewValue}}
+                    <mat-select [value]="selectedOption" namestyle="color: black;"
+                        (selectionChange)="updateLocation($event)">
+                        <mat-option *ngFor="let location of locations$ | async" [value]="location._id">
+                            {{location.name}}
                         </mat-option>
                     </mat-select>
 
@@ -30,13 +31,11 @@
         <div class="inventory-page__innerinner__filter">
             <mat-form-field style="color: #000000cb; width: 170px; margin-left: 10px;">
                 <mat-label style="color: #000000cb;  ">Filter</mat-label>
-                <mat-select [(value)]="selected">
-                    <mat-option style="width: 80px;">None</mat-option>
-                    <mat-option value="option1">Original Churns</mat-option>
-                    <mat-option value="option2">Cereal Churns</mat-option>
-                    <mat-option value="option3">Vanilla</mat-option>
-                    <mat-option value="option3">Chocolate</mat-option>
-                    <mat-option value="option3">Coffee</mat-option>
+                <mat-select [(value)]="selected" style="color: #000000cb;" (selectionChange)="updateIngredient($event)">
+                    <mat-option value="">None</mat-option>
+                    <mat-option value="originalChurn">Original Churns</mat-option>
+                    <mat-option value="cerealChurn">Cereal Churns</mat-option>
+                    <mat-option value="candyChurn">Candy Churns</mat-option>
 
                 </mat-select>
             </mat-form-field>
@@ -46,7 +45,7 @@
         </div>
         <div class="inventory-page__innerinner__heading">
             <h4 style="margin-left: 120px; margin-top: -100px; width: 400px;">Your inventory overview of all ingredients
-                in [[this]]
+                in {{ingredients.length}}
                 location</h4>
         </div>
     </div>
@@ -54,300 +53,39 @@
     <div class="inventory-page__inner">
 
         <div class="inventory-page__inner__cards">
-
-            <mat-card class="inventory-page__inner__cards__gelato">
+            <mat-card class="inventory-page__inner__cards__gelato" *ngFor="let ingredient of ingredients">
                 <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/ingredients/FabbriGelatoBase.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p" style="line-height: 8.5px; text-align: left;">Fabbri
-                    Gelato Base</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/ingredients/unimagicBubblegumMarshmellowPack.png">
+                    <img src="../../assets/ingredients/{{ingredient.image}}">
                 </div>
                 <p class="inventory-page__inner__cards__gelato__p" style="line-height: 8.5px; text-align: left;">
-                    Unimagic Bubblegum
-                    Marshmello Pack</p>
+                    {{ingredient.name}}</p>
                 <div class="inventory-page__inner__cards__gelato__buttons">
                     <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
+                        aria-label="stock">{{ingredient.quantity}}
                     </button>
                     <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
                         aria-label="create">Update
                     </button>
+                </div>
+                <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                    style="margin-left: -75px; margin-top: 20px;">
+                    Stock Level: </p>
+                <!-- STOCK LEVEL LOW OR SUFFICIENT -->
+                <div>
+                    <div *ngIf="ingredient.quantity < 8  else ingredientSufficient">
+                        <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                            style="margin-left: -115px; margin-top: -10px; font-family: Barlow; font-weight: bold; color: orange">
+                            LOW!</p>
+                    </div>
+
+                    <ng-template #ingredientSufficient>
+                        <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                            style="margin-left: -80px; margin-top: -10px; font-family: Barlow; font-weight: bold; color: #E76A86">
+                            SUFFICIENT</p>
+                    </ng-template>
                 </div>
             </mat-card>
 
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/ingredients/rascalssyrup.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p" style="line-height: 8.5px; text-align: left;">
-                    Rascals Bubblegum
-                    Syrup</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p" style="line-height: 8.5px; text-align: left;">
-                    Unimagic Bubblegum
-                    Marshmello Pack</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p" style="line-height: 8.5px; text-align: left;">
-                    Unimagic Bubblegum
-                    Marshmello Pack</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
-
-            <mat-card class="inventory-page__inner__cards__gelato">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p">Cocopops Condensedmilk</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">12
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
-                </div>
-            </mat-card>
         </div>
     </div>
 </div>

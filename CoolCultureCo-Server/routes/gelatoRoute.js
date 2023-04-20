@@ -28,7 +28,30 @@ router.get('/api/gelatos/:id/:category', async (req, res) => {
         location: req.params.id
     });
 
-    res.send(gelato);
+    let catGelato = [];
+
+    for (let i = 0; i < gelato.length; i++) {
+        if (req.params.category == "cerealChurn") {
+            if (gelato[i].cerealChurn) {
+                catGelato.push(gelato[i])
+            }
+        }
+
+        if (req.params.category == "originalChurn") {
+            if (gelato[i].originalChurn) {
+                catGelato.push(gelato[i])
+            }
+        }
+
+        if (req.params.category == "candyChurn") {
+            if (gelato[i].candyChurn) {
+                catGelato.push(gelato[i])
+            }
+        }
+
+    }
+
+    res.send(catGelato);
 });
 
 

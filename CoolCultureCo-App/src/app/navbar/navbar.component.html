@@ -12,14 +12,15 @@
 
     </div>
     <ul class="navbar__nav">
-        <li class="navbar__nav__item" *ngFor="let data of navData">
+        <li class="navbar__nav__item" *ngFor="let data of navData" style="color: #eee;">
 
             <a class="navbar__nav__item__link" [routerLink]="data.routeLink" routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact: true}">
                 <img src={{data.icon}} />
                 <i class="navbar__nav__item__link__icon" [class]="data.icon"></i>
                 <!-- <i class="navbar__nav__item__link__icon"></i> -->
-                <span class="navbar__nav__item__link__text" *ngIf="collapsed">{{data.label}}</span>
+                <span class="navbar__nav__item__link__text" *ngIf="collapsed"
+                    style="text-align: center;margin-left: 8px; justify-self: center; margin-top: 6px;">{{data.label}}</span>
             </a>
         </li>
 

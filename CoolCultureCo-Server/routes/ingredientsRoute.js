@@ -13,7 +13,38 @@ router.get('/api/ingredients/:id', async (req, res) => {
     const ingredients = await Ingredients.find({
         location: req.params.id
     });
+
     res.send(ingredients);
+});
+router.get('/api/ingredients/:id/:category', async (req, res) => {
+    const ingredients = await Ingredients.find({
+        location: req.params.id
+    });
+
+    let catIngredient = [];
+
+    for (let i = 0; i < ingredients.length; i++) {
+        if (req.params.category == "cerealChurn") {
+            if (ingredients[i].cerealChurn) {
+                catIngredient.push(ingredients[i])
+            }
+        }
+
+        if (req.params.category == "originalChurn") {
+            if (ingredients[i].originalChurn) {
+                catIngredient.push(ingredients[i])
+            }
+        }
+
+        if (req.params.category == "candyChurn") {
+            if (ingredients[i].candyChurn) {
+                catIngredient.push(ingredients[i])
+            }
+        }
+
+    }
+
+    res.send(catIngredient);
 });
 
 router.get("/api/ingredient/:id", async (req, res) => {

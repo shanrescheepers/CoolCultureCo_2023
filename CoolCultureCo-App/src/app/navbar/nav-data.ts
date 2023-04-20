@@ -10,7 +10,7 @@ export const navbarData = [
     },
     {
         routeLink: '/creategelato',
-        icon: "../../assets/icons/create-icon.svg",
+        icon: "../../assets/icons/create.svg",
         label: 'Create'
     },
     {

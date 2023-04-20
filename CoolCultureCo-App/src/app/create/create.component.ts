@@ -29,7 +29,7 @@ export class CreateComponent implements OnInit {
 
   isNavbarCollapsed = false;
   screenWidth = 0;
-  selected = 'option2';
+  selected = '';
   onToggleNavbar(data: NavbarToggle): void {
     this.screenWidth = data.screenWidth;
     this.isNavbarCollapsed = data.collapsed;
@@ -37,6 +37,8 @@ export class CreateComponent implements OnInit {
   constructor(private locationService: LocationService, private http: HttpClient) {
     this.loadLocation(this.selectedOption);
     this.loadIngredients(this.selectedOption, "");
+    this.loadGelato(this.selectedOption, "")
+
 
   }
 
@@ -61,8 +63,14 @@ export class CreateComponent implements OnInit {
   updateLocation($event: any) {
     // console.log($event.value);
     this.selectedOption = $event.value;
-    this.loadLocation(this.selectedOption)
+    this.updateAll()
 
+  }
+
+  updateIngredient($event: any) {
+    // console.log($event.value);
+    this.selected = $event.value;
+    this.updateAll()
   }
 
 
@@ -70,12 +78,44 @@ export class CreateComponent implements OnInit {
 
   loadIngredients(id: any, category: any) {
     this.http
-      .get("http://localhost:3000/api/ingredients/" + id)
+      .get("http://localhost:3000/api/ingredients/" + id + "/" + category)
       .subscribe((loadingredients: any) => {
         console.log(loadingredients);
 
         this.ingredients = loadingredients;
       })
+  }
+
+  gelatos: any[] = [];
+
+  loadGelato(id: any, category: any) {
+    this.http
+      .get("http://localhost:3000/api/gelatos/" + id + "/" + category)
+      .subscribe((gelatos: any) => {
+        this.gelatos = gelatos;
+      })
+  }
+
+  updateAll() {
+    this.loadLocation(this.selectedOption)
+
+    this.loadGelato(this.selectedOption, this.selected);
+  }
+
+  selectedGelatos: any[] = [];
+
+  loadSelectedGelato(id: any) {
+    this.http
+      .get("http://localhost:3000/api/gelatos/" + id)
+      .subscribe((selectedGelatos: any) => {
+        console.log(selectedGelatos)
+        this.selectedGelatos = selectedGelatos;
+      })
+  }
+
+  gelatoSelect(id: any) {
+    console.log(id);
+
   }
 
 

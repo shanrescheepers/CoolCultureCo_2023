@@ -38,9 +38,14 @@ export class DashboardComponent implements OnInit {
   }
 
   constructor(private locationService: LocationService, private http: HttpClient) {
-    this.loadGelato(this.selectedOption, "")
+    this.loadGelato(this.selectedOption)
     this.loadLocation(this.selectedOption);
+    this.loadCerealGelato(this.selectedOption);
+    this.loadOriginalGelato(this.selectedOption);
+
+    this.loadCandyGelato(this.selectedOption)
   }
+
 
   ngOnInit(): void {
     this.locations$ = this.locationService.getLocations();
@@ -62,21 +67,55 @@ export class DashboardComponent implements OnInit {
   }
 
   gelatos: any[] = [];
+  cerealGelatos: any[] = [];
+  candyGelatos: any[] = [];
+  originalGelatos: any[] = [];
 
-  loadGelato(id: any, category: any) {
+
+  loadGelato(id: any) {
     this.http
-      .get("http://localhost:3000/api/gelatos/" + id + "/" + category)
+      .get("http://localhost:3000/api/gelatos/" + id)
       .subscribe((gelatos: any) => {
         this.gelatos = gelatos;
+      })
+  }
+  loadCerealGelato(id: any) {
+    this.http
+      .get("http://localhost:3000/api/gelatos/" + id + "/cerealChurn")
+      .subscribe((gelatos: any) => {
+        console.log(gelatos);
+
+        this.cerealGelatos = gelatos;
+      })
+  }
+
+  loadCandyGelato(id: any) {
+    this.http
+      .get("http://localhost:3000/api/gelatos/" + id + "/candyChurn")
+      .subscribe((gelatos: any) => {
+        console.log(gelatos);
+
+        this.candyGelatos = gelatos;
+      })
+  }
+  loadOriginalGelato(id: any) {
+    this.http
+      .get("http://localhost:3000/api/gelatos/" + id + "/originalChurn")
+      .subscribe((gelatos: any) => {
+        console.log(gelatos);
+
+        this.originalGelatos = gelatos;
       })
   }
 
   updateLocation($event: any) {
     // console.log($event.value);
     this.selectedOption = $event.value;
-    this.loadLocation(this.selectedOption)
-    this.loadGelato(this.selectedOption, "")
-
+    this.loadGelato(this.selectedOption)
+    this.loadLocation(this.selectedOption);
+    this.loadCerealGelato(this.selectedOption);
+    this.loadOriginalGelato(this.selectedOption);
+    this.loadCandyGelato(this.selectedOption)
   }
 
 }

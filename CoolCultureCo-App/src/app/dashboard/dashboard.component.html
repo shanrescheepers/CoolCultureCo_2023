@@ -27,145 +27,132 @@
 
         <div class="dashboard-page__inner__flavouroftheweek">
             <div class="dashboard-page__inner__flavouroftheweek__inner">
-                <h3 class=" dashboard-page__inner__flavouroftheweek__inner__adres"> Name : {{location.name}}
+                <h3 class=" dashboard-page__inner__flavouroftheweek__inner__adres"> {{location.name}}
                 </h3>
-                <h3 class="dashboard-page__inner__flavouroftheweek__inner__adres">Location : {{location.address}}</h3>
-                <div class="dashboard-page__inner__flavouroftheweek__inner__img" style="margin-bottom: 20px;"> <img
+                <h3 class="dashboard-page__inner__flavouroftheweek__inner__adres2"> {{location.address}}</h3>
+                <div class="dashboard-page__inner__flavouroftheweek__inner__img"
+                    style="margin-bottom: 20px; justify-self: center;"> <img
                         src="../assets/ccc-assets/{{location.image}}"
                         class="dashboard-page__inner__flavouroftheweek__inner__img">
                 </div>
-                <h3 class="dashboard-page__inner__flavouroftheweek__inner__number"> Manager's Number : +
+                <p style="  font-family: BarlowRegular;
+                font-size: 12px;
+                font-weight: lighter;
+                border: 1px solid #F5CAD7;
+                border-radius: 10px;
+                align-self: center;
+                padding: 4px;
+                width: fit-content;
+                background-color: #F5CAD7; height: 30px;">Company Contact Details</p>
+                <h3 class="dashboard-page__inner__flavouroftheweek__inner__number"> +
                     {{location.managerNumber}}</h3>
-                <h3 class="dashboard-page__inner__flavouroftheweek__inner__email">Email : {{location.email}}</h3>
+                <h3 class="dashboard-page__inner__flavouroftheweek__inner__email">{{location.email}}</h3>
                 <div class="dashboard-page__inner__flavouroftheweek__inner__gelatos">
                     <h3 class="dashboard-page__inner__flavouroftheweek__inner__gelatos">Gelatos Available :</h3>
                     <ol class="dashboard-page__inner__flavouroftheweek__inner__gelatos__ol">
 
-                        <li>Gelato one</li>
-                        <li>Gelato one</li>
-                        <li>Gelato one</li>
+                        <li *ngFor="let gelato of gelatos">{{gelato.name}}</li>
                     </ol>
                 </div>
             </div>
         </div>
-
     </div>
-
-
     <div>
-        <h1 class="dashboard-page__h1card">CEREAL CHURNS</h1>
+        <h1 class="dashboard-page__h1card">CANDY & CEREAL CHURNS</h1>
         <div class="dashboard-page__cerealcards-content">
-
             <div class="dashboard-page__cerealcards-content__cards1">
-                <mat-card class="dashboard-page__cerealcards-content__cards1__item" *ngFor="let gelato of gelatos">
+                <!-- CANDY -->
+                <mat-card class="dashboard-page__cerealcards-content__cards1__item" *ngFor="let gelato of candyGelatos">
                     <div class="dashboard-page__cerealcards-content__cards1__item__img">
-                        <img src="../../assets/gelatos/cocopos_condensedmilk.png">
+                        <img src="../../assets/gelatos/{{gelato.image}}"
+                            style="border-radius: 15px; width: 120px;height: 110px;  margin-top: -10px;">
                     </div>
                     <p class="dashboard-page__cerealcards-content__cards1__item__description">{{gelato.name}}</p>
                     <button class="dashboard-page__cerealcards-content__cards1__item__stock" mat-icon-button
                         aria-label="Example icon-button with heart icon">{{gelato.quantity}}
                     </button>
-                </mat-card>
+                    <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                        style="margin-left: -75px; margin-top: 20px;">
+                        Stock Level </p>
+                    <!-- STOCK LEVEL LOW OR SUFFICIENT -->
+                    <div>
+                        <div *ngIf="gelato.quantity < 8  else gelatoSufficient">
+                            <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                                style="margin-left: -115px; margin-top: -10px; font-family: Barlow; font-weight: bold; color: orange">
+                                LOW!</p>
+                        </div>
 
-                <!-- <mat-card class="dashboard-page__cerealcards-content__cards1__item">
-                    <div class="dashboard-page__cerealcards-content__cards1__item__img">
-                        <img src="../../assets/gelatos/cocopos_condensedmilk.png">
+                        <ng-template #gelatoSufficient>
+                            <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                                style="margin-left: -78px; margin-top: -10px; font-family: Barlow; font-weight: bold; color: #E76A86;font-size: 14px;">
+                                SUFFICIENT</p>
+                        </ng-template>
                     </div>
-                    <p class="dashboard-page__cerealcards-content__cards1__item__description">Cocopops Condensedmilk</p>
-                    <button class="dashboard-page__cerealcards-content__cards1__item__stock" mat-icon-button
-                        aria-label="Example icon-button with heart icon">12
-                    </button>
                 </mat-card>
-
-                <mat-card class="dashboard-page__cerealcards-content__cards1__item">
+                <!-- CEREAL -->
+                <mat-card class="dashboard-page__cerealcards-content__cards1__item"
+                    *ngFor="let gelato of cerealGelatos">
                     <div class="dashboard-page__cerealcards-content__cards1__item__img">
-                        <img src="../../assets/gelatos/cocopos_condensedmilk.png">
+                        <img src="../../assets/gelatos/{{gelato.image}}"
+                            style="border-radius: 15px; width: 120px;height: 110px; text-align: center;margin-left: -13px; margin-top: -10px;">
                     </div>
-                    <p class="dashboard-page__cerealcards-content__cards1__item__description">Cocopops Condensedmilk</p>
+                    <p class="dashboard-page__cerealcards-content__cards1__item__description">{{gelato.name}}</p>
                     <button class="dashboard-page__cerealcards-content__cards1__item__stock" mat-icon-button
-                        aria-label="Example icon-button with heart icon">12
+                        aria-label="Example icon-button with heart icon">{{gelato.quantity}}
                     </button>
+                    <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                        style="margin-left: -75px; margin-top: 20px;">
+                        Stock Level: </p>
+                    <!-- STOCK LEVEL LOW OR SUFFICIENT -->
+                    <div>
+                        <div *ngIf="gelato.quantity < 8  else gelatoSufficient">
+                            <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                                style="margin-left: -115px; margin-top: -10px; font-family: Barlow; font-weight: bold; color: orange">
+                                LOW!</p>
+                        </div>
+
+                        <ng-template #gelatoSufficient>
+                            <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                                style="margin-left: -80px; margin-top: -10px; font-family: Barlow; font-weight: bold; color: #E76A86">
+                                SUFFICIENT</p>
+                        </ng-template>
+                    </div>
+
                 </mat-card>
-
-                <mat-card class="dashboard-page__cerealcards-content__cards1__item">
-                    <div class="dashboard-page__cerealcards-content__cards1__item__img">
-                        <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                    </div>
-                    <p class="dashboard-page__cerealcards-content__cards1__item__description">Cocopops Condensedmilk</p>
-                    <button class="dashboard-page__cerealcards-content__cards1__item__stock" mat-icon-button
-                        aria-label="Example icon-button with heart icon">12
-                    </button>
-                </mat-card>
-
-                <mat-card class="dashboard-page__cerealcards-content__cards1__item">
-                    <div class="dashboard-page__cerealcards-content__cards1__item__img">
-                        <img src="../../assets/gelatos/cocopos_condensedmilk.png">
-                    </div>
-                    <p class="dashboard-page__cerealcards-content__cards1__item__description">Cocopops Condensedmilk</p>
-                    <button class="dashboard-page__cerealcards-content__cards1__item__stock" mat-icon-button
-                        aria-label="Example icon-button with heart icon">12
-                    </button>
-                </mat-card> -->
             </div>
         </div>
-
         <h1 class="dashboard-page__original-cards-content__h1">ORIGINAL CHURNS</h1>
-
         <div class="dashboard-page__original-cards-content__churncards">
-            <mat-card class="dashboard-page__original-cards-content__churncards__item">
-                <div class="dashboard-page__original-cards-content__churncards__item__img">
-                    <img src="../../assets/gelatos/cottoncandymoons.svg">
-                </div>
-                <p class="dashboard-page__original-cards-content__churncards__item__description">Cotton Candy Moons</p>
-                <button class="dashboard-page__original-cards-content__churncards__item__stock" mat-icon-button
-                    aria-label="Example icon-button with heart icon">12
-                </button>
-            </mat-card>
+            <div class="dashboard-page__cerealcards-content__cards1">
+                <mat-card class="dashboard-page__cerealcards-content__cards1__item"
+                    *ngFor="let gelato of originalGelatos">
+                    <div class="dashboard-page__cerealcards-content__cards1__item__img">
 
-            <mat-card class="dashboard-page__original-cards-content__churncards__item">
-                <div class="dashboard-page__original-cards-content__churncards__item__img">
-                    <img src="../../assets/gelatos/cottoncandymoons.svg">
-                </div>
-                <p class="dashboard-page__original-cards-content__churncards__item__description">Cotton Candy Moons</p>
-                <button class="dashboard-page__original-cards-content__churncards__item__stock" mat-icon-button
-                    aria-label="Example icon-button with heart icon">12
-                </button>
-            </mat-card>
+                        <img src="../../assets/gelatos/{{gelato.image}}"
+                            style="border-radius: 15px; width: 120px;height: 110px; text-align: center;margin-left: -13px; margin-top: -10px;">
+                    </div>
+                    <p class="dashboard-page__cerealcards-content__cards1__item__description">{{gelato.name}}</p>
+                    <button class="dashboard-page__cerealcards-content__cards1__item__stock" mat-icon-button
+                        aria-label="Example icon-button with heart icon">{{gelato.quantity}}
+                    </button>
+                    <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                        style="margin-left: -75px; margin-top: 20px;">
+                        Stock Level: </p>
+                    <!-- STOCK LEVEL LOW OR SUFFICIENT -->
+                    <div>
+                        <div *ngIf="gelato.quantity < 8  else gelatoSufficient">
+                            <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                                style="margin-left: -115px; margin-top: -10px; font-family: Barlow; font-weight: bold; color: orange">
+                                LOW!</p>
+                        </div>
 
-            <mat-card class="dashboard-page__original-cards-content__churncards__item">
-                <div class="dashboard-page__original-cards-content__churncards__item__img">
-                    <img src="../../assets/gelatos/cottoncandymoons.svg">
-                </div>
-                <p class="dashboard-page__original-cards-content__churncards__item__description">Cotton Candy Moons</p>
-                <button class="dashboard-page__original-cards-content__churncards__item__stock" mat-icon-button
-                    aria-label="Example icon-button with heart icon">12
-                </button>
-            </mat-card>
-
-            <mat-card class="dashboard-page__original-cards-content__churncards__item">
-                <div class="dashboard-page__original-cards-content__churncards__item__img">
-                    <img src="../../assets/gelatos/cottoncandymoons.svg">
-                </div>
-                <p class="dashboard-page__original-cards-content__churncards__item__description">Cotton Candy Moons</p>
-                <button class="dashboard-page__original-cards-content__churncards__item__stock" mat-icon-button
-                    aria-label="Example icon-button with heart icon">12
-                </button>
-            </mat-card>
-
-            <mat-card class="dashboard-page__original-cards-content__churncards__item">
-                <div class="dashboard-page__original-cards-content__churncards__item__img">
-                    <img src="../../assets/gelatos/cottoncandymoons.svg">
-                </div>
-                <p class="dashboard-page__original-cards-content__churncards__item__description">Cotton Candy Moons</p>
-                <button class="dashboard-page__original-cards-content__churncards__item__stock" mat-icon-button
-                    aria-label="Example icon-button with heart icon">12
-                </button>
-            </mat-card>
-
-
-
+                        <ng-template #gelatoSufficient>
+                            <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                                style="margin-left: -80px; margin-top: -10px; font-family: Barlow; font-weight: bold; color: #E76A86">
+                                SUFFICIENT</p>
+                        </ng-template>
+                    </div>
+                </mat-card>
+            </div>
         </div>
     </div>
-
-
-</div>
