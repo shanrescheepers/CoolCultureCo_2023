@@ -229,8 +229,6 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [stars-url]: https://github.com/gshanrescheepers/CoolCultureCo_2023/stargazers
 [issues-shield]: https://img.shields.io/github/issues/shanrescheepers/CoolCultureCo_2023.svg?style=for-the-badge
 [issues-url]: https://github.com/shanrescheepers/CoolCultureCo_2023/issues
-[license-shield]: https://img.shields.io/github/license/gshanrescheepers/CoolCultureCo_2023.svg?style=for-the-badge
-[license-url]: https://github.com/shanrescheepers/CoolCultureCo_2023/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: hhttps://www.linkedin.com/in/shanr%C3%A9-scheepers-09185b213/
 [product-screenshot]: ./CoolCultureCo-App/src/assets/ccc-assets/productImage1.png
