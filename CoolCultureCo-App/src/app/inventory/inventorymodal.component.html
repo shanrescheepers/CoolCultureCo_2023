@@ -1,0 +1,20 @@
+<div class="dialog">
+    <h1 mat-dialog-title class="dialog__h1">Ingredients Needed to Make {{data.ingredient.name}}</h1>
+    <div mat-dialog-content class="dialog__content">
+        <img src="../../assets/ingredients/{{data.ingredient.image}}" style="height: 80px;
+        width: 80px;" class="dialog__content__img">
+        <div class="dialog__content__ingredients">
+
+
+            <p class="dialog__content__ingredients__p2" style="width:
+            200px;">
+                Total in Inventory :
+                ({{data.ingredient.quantity}}) </p>
+
+        </div>
+    </div>
+    <div mat-dialog-actions class="dialog__buttons">
+        <button mat-button (click)="onNoClick()" class="dialog__buttons__create">Close</button>
+        <button mat-button (click)="create(data.ingredient)" class="dialog__buttons__create">Create</button>
+    </div>
+</div>

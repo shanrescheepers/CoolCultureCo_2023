@@ -1,0 +1,40 @@
+.dialog {
+
+    margin: 0;
+    padding: 0;
+
+    &__content {
+        &__img {
+            display: grid;
+            align-content: center;
+            margin-left: 200px;
+            border-radius: 10px;
+            padding-bottom: 20px;
+        }
+
+        &__ingredients {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 80px 30px 30px 30px;
+            grid-gap: 30px;
+        }
+    }
+
+    &__buttons {
+        display: grid;
+        grid-template-columns: 200px 200px;
+        margin-left: 100px;
+
+        &__create {
+
+            color: #111;
+            background-color: #FEDBDA;
+            height: 50px;
+            width: 120px;
+            border-radius: 10px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border: 0px;
+        }
+    }
+}
