@@ -92,7 +92,7 @@
                 <img src="../../assets/gelatos/{{gelato.image}}" style="border-radius: 10px;width: 70px; height:70px;">
             </div>
             <p class="create-page__cards__gelato__p"
-                style="font-weight: 200; text-align: left; line-height: 8.5px; font-weight: bold;">
+                style="font-weight: 200; text-align: center; line-height: 8.5px; font-weight: bold;">
                 {{gelato.name}}
             </p>
             <!-- <button class="create-page__cards__gelato__buttons__create" mat-icon-button aria-label="create">
@@ -119,13 +119,13 @@
                 </ng-template>
 
             </div>
-            <div class="create-page__cards__gelato__buttons" style="margin-bottom: -10px;">
+            <div class="create-page__cards__gelato__buttons" style="margin-bottom: -20px;">
 
-                <button class="create-page__cards__gelato__buttons__stock" mat-icon-button aria-label="stock">
+                <div class="create-page__cards__gelato__buttons__stock" mat-icon-button aria-label="stock">
                     <p class="create-page__cards__gelato__buttons__stock"
-                        style="padding-top: 5px;  padding-bottom: 2px; margin-top: 2px;">
+                        style="padding-top: 5px;  padding-bottom: 2px; margin-top: 2px; font-family: BarlowRegular; font-weight: bolder;">
                         {{gelato.quantity}}</p>
-                </button>
+                </div>
                 <button class="create-page__cards__gelato__buttons__create" mat-icon-button aria-label="create"
                     (click)="gelatoSelect(gelato)">
                     <p class="create-page__cards__gelato__buttons__create" style="padding-top: 6px;">

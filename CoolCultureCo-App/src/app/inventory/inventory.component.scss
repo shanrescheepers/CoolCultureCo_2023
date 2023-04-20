@@ -42,6 +42,7 @@
     &__innerinner {
         display: grid;
         grid-template-columns: 400px 400px auto;
+        margin-bottom: 30px;
 
         &__notified {
             margin-left: 347px;
@@ -56,6 +57,7 @@
             &__p {
                 margin-left: 60px;
                 padding-left: 60px;
+
                 line-height: 40px;
                 text-align: center;
                 width: 350px;
@@ -69,8 +71,8 @@
             background-image: url(../../assets/ccc-assets/ccc-logo.svg);
             background-repeat: no-repeat;
             background-size: contain;
-            height: 200px;
-            width: 200px;
+            height: 100px;
+            width: 100px;
             margin-top: 10px;
             margin-left: 100px;
         }
@@ -155,7 +157,7 @@
 
             &__gelato {
                 width: 120px;
-                height: 110px;
+                height: 170px;
                 display: grid;
                 text-align: center;
                 background-color: #F6F2EF;
@@ -176,6 +178,7 @@
                         border-bottom-left-radius: 0px;
                         border-top-right-radius: 0px;
                         font-family: Barlow;
+                        margin-top: -10px;
 
                     }
 
@@ -202,6 +205,7 @@
                         font-size: 16px;
                         justify-content: center;
                         justify-items: center;
+                        margin-top: -10px;
                     }
 
                     &__create:hover {

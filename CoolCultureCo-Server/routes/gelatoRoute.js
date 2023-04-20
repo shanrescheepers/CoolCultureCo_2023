@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express();
 const Gelatos = require('../models/gelato')
-
+const Ingredients = require('../models/ingredients')
 
 // Get all Gelatos
 router.get('/api/gelatos/', async (req, res) => {
@@ -20,6 +20,46 @@ router.get('/api/gelatos/:id', async (req, res) => {
         location: req.params.id
     });
     res.send(gelato);
+});
+
+//create gelato
+router.get('/api/creategelato/:id', async (req, res) => {
+    // console.log(req.params);
+
+    const gelato = await Gelatos.findById(req.params.id);
+
+
+    console.log(gelato._id)
+
+    // const ingredients = await Ingredients.find({
+    //     location: gelato.location
+    // });
+
+    // for (let i = 0; i < ingredients.length; i++) {
+    //     const element = ingredients[i];
+    //     let quantity = element.quantity - 1
+    //     for (let t = 0; t < gelato.ingredients.length; t++) {
+    //         const element2 = gelato.ingredients[t];
+    //         const ingredient = await Ingredients.updateOne(
+    //             {
+    //                 location: gelato._id,
+    //                 name: element2.name
+    //             },
+    //             {
+    //                 $set: {
+    //                     quantity: quantity,
+    //                 }
+    //             }
+    //         )
+    //         console.log(ingredient)
+    //     }
+    // }
+    gelato.quantity = gelato.quantity + 1
+    gelato.save()
+
+    // console.log(ingredients);
+
+    res.send("Done");
 });
 
 //get by location by category

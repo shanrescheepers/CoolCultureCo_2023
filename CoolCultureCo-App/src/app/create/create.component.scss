@@ -331,9 +331,9 @@
 
             &__buttons {
                 display: grid;
-                grid-template-columns: auto auto;
-                grid-gap: 4px;
-
+                grid-template-columns: 45px 30px;
+                grid-gap: 10px;
+                margin-left: -45px;
                 text-align: center;
 
                 &__stock {
@@ -349,13 +349,14 @@
                     border-bottom-left-radius: 0px;
                     border-top-right-radius: 0px;
                     font-size: 14px;
-
+                    display: grid;
                     align-content: center;
 
                 }
 
                 &__create {
                     color: #060606;
+                    display: grid;
                     font-weight: lighter;
                     font-family: Sweet;
                     display: grid;

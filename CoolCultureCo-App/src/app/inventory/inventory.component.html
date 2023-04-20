@@ -44,9 +44,10 @@
             </div>
         </div>
         <div class="inventory-page__innerinner__heading">
-            <h4 style="margin-left: 120px; margin-top: -100px; width: 400px;">Your inventory overview of all ingredients
-                in {{ingredients.length}}
-                location</h4>
+            <h4 style="margin-left: 120px; margin-top: -24px; width: 400px;">Your inventory overview of all
+                <span style="font-weight: bold;">{{ingredients.length}}</span> ingredients in
+                {{location.name}}
+            </h4>
         </div>
     </div>
 
@@ -54,36 +55,41 @@
 
         <div class="inventory-page__inner__cards">
             <mat-card class="inventory-page__inner__cards__gelato" *ngFor="let ingredient of ingredients">
-                <div class="inventory-page__inner__cards__gelato__image">
-                    <img src="../../assets/ingredients/{{ingredient.image}}">
-                </div>
-                <p class="inventory-page__inner__cards__gelato__p" style="line-height: 8.5px; text-align: left;">
+                <p class="inventory-page__inner__cards__gelato__p"
+                    style="line-height: 8.5px; text-align: left; margin-bottom: -15px;">
                     {{ingredient.name}}</p>
-                <div class="inventory-page__inner__cards__gelato__buttons">
-                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
-                        aria-label="stock">{{ingredient.quantity}}
-                    </button>
-                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
-                        aria-label="create">Update
-                    </button>
+                <div class="inventory-page__inner__cards__gelato__image">
+                    <img src="../../assets/ingredients/{{ingredient.image}}"
+                        style="padding-top:16px;height: 85px; width: 85px; justify-items: center; align-items: center; align-self: center; align-content: center;margin-left: -29px;margin-top: -8px;border-radius: 10px;">
                 </div>
-                <p class="dashboard-page__cerealcards-content__cards1__item__level"
-                    style="margin-left: -75px; margin-top: 20px;">
-                    Stock Level: </p>
+
+
                 <!-- STOCK LEVEL LOW OR SUFFICIENT -->
-                <div>
+                <div style="margin-top: 24px;">
+                    <p class="dashboard-page__cerealcards-content__cards1__item__level"
+                        style="margin-left: -75px; padding-top: 16px;">
+                        Stock Level: </p>
                     <div *ngIf="ingredient.quantity < 8  else ingredientSufficient">
                         <p class="dashboard-page__cerealcards-content__cards1__item__level"
-                            style="margin-left: -115px; margin-top: -10px; font-family: Barlow; font-weight: bold; color: orange">
+                            style="margin-left: -100px;  margin-top: -20px; font-family: Barlow; font-weight: bold; color: orange; font-size: 12px;">
                             LOW!</p>
                     </div>
 
                     <ng-template #ingredientSufficient>
                         <p class="dashboard-page__cerealcards-content__cards1__item__level"
-                            style="margin-left: -80px; margin-top: -10px; font-family: Barlow; font-weight: bold; color: #E76A86">
+                            style="margin-left: -80px; margin-top: -20px; font-family: Barlow; font-weight: bold; color: #E76A86">
                             SUFFICIENT</p>
                     </ng-template>
                 </div>
+                <div class="inventory-page__inner__cards__gelato__buttons" style="margin-bottom: -15px;">
+                    <button class="inventory-page__inner__cards__gelato__buttons__stock" mat-icon-button
+                        aria-label="stock">{{ingredient.quantity}}
+                    </button>
+                    <button class="inventory-page__inner__cards__gelato__buttons__create" mat-icon-button
+                        aria-label="create" style="margin-right: -11px;">Update
+                    </button>
+                </div>
+
             </mat-card>
 
         </div>

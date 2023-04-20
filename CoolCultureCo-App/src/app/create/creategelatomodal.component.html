@@ -1,15 +1,19 @@
 <div class="dialog">
     <h1 mat-dialog-title class="dialog__h1">Ingredients Needed to Make {{data.gelato.name}}</h1>
     <div mat-dialog-content class="dialog__content">
+        <img src="../../assets/gelatos/{{data.gelato.image}}" style="height: 80px;
+        width: 80px;" class="dialog__content__img">
+        <div class="dialog__content__ingredients">
 
-        <div>ingred
-            <p *ngFor="let location of ingredientsHold">{{ingredientsHold.name}} test</p>
+
+            <p class="dialog__content__ingredients__p2" *ngFor="let ingredient of ingredientsHold">{{ingredient.name}}
+                ({{ingredient.quantity}}) </p>
+
         </div>
-
     </div>
     <div mat-dialog-actions class="dialog__buttons">
         <button mat-button (click)="onNoClick()" class="dialog__buttons__create">Close</button>
-        <button mat-button (click)="create()" class="dialog__buttons__create">Create</button>
-
+        <button mat-button (click)="create(data.gelato)" class="dialog__buttons__create"
+            *ngIf="ingredientMissing">Create</button>
     </div>
 </div>

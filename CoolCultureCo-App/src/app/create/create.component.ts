@@ -164,10 +164,7 @@ export class CreateComponent implements OnInit {
     this.selectedGelatos = id;
 
   }
-
-
 }
-
 
 @Component({
   selector: 'creategelatomodal.component',
@@ -186,32 +183,72 @@ export class DialogOverviewExampleDialog {
 
     for (let i = 0; i < this.data.gelato.ingredients.length; i++) {
       const element = this.data.gelato.ingredients[i];
-      this.loadIngredients(this.data.location, encodeURIComponent(element))
+      let newdata: any = []
+      this.http
+        .get("http://localhost:3000/api/ingredientsname/" + this.data.location + "/" + encodeURIComponent(element))
+        .subscribe((loadingredients: any) => {
+          console.log(loadingredients[0]);
+          newdata.push(loadingredients[0])
+          this.ingredientsHold.push(loadingredients[0])
+          if (loadingredients[0].quantity == 0) {
+            this.ingredientMissing = false
+          }
+        })
+      console.log(newdata);
     }
 
     console.log(this.ingredientsHold);
 
   }
-  ingredientsHold: Ingredient[] = {};
-
-  ingredientsAvaliable: any = [];
+  ingredientsHold: any = [];
+  ingredientMissing: any = true;
+  ingredientsAvaliable?: any = [];
   ingredientSingle: any = {};
 
   loadIngredients(id: any, category: any) {
-    let newdata = {}
     this.http
       .get("http://localhost:3000/api/ingredientsname/" + id + "/" + category)
       .subscribe((loadingredients: any) => {
         console.log(loadingredients[0]);
         this.ingredientsHold.push(loadingredients[0])
       })
-
   }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-  create(): void {
+  create(data: any): void {
+    console.log(data);
+    this.http
+      .get("http://localhost:3000/api/creategelato/" + this.data.gelato._id)
+      .subscribe((loadingredients: any) => {
+        console.log(loadingredients)
+      })
+
+    for (let i = 0; i < this.data.gelato.ingredients.length; i++) {
+      console.log(this.data.gelato.ingredients[i])
+      const body = {};
+      const options = {
+
+      };
+      this.http
+        .get("http://localhost:3000/api/ingredientsname/" + this.data.gelato._id + "/" + encodeURIComponent(this.data.gelato.ingredients[i]))
+        .subscribe((loadingredients: any) => {
+          console.log(loadingredients)
+          for (let t = 0; t < loadingredients.length; t++) {
+            let quan = loadingredients[t].quantity;
+            quan = quan - 1;
+            console.log(quan)
+            this.http
+              .patch("http://localhost:3000/api/updateingredientq/" + loadingredients[t]._id + "/" + quan, body, options)
+              .subscribe((loadingredients: any) => {
+                console.log(loadingredients)
+              })
+          }
+        })
+
+    }
+
     this.dialogRef.close();
   }
 }

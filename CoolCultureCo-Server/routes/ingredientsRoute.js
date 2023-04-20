@@ -17,6 +17,23 @@ router.get('/api/ingredients/:id', async (req, res) => {
     res.send(ingredients);
 });
 
+
+
+router.patch('/api/updateingredientq/:id/:quantity', async (req, res) => {
+    console.log(req.params)
+    console.log(req.body)
+
+    const ingredient = await Ingredients.updateOne(
+        { _id: req.params.id },
+        {
+            $set: {
+                quantity: req.params.quantity,
+            }
+        }
+    )
+    res.json(ingredient);
+});
+
 router.get('/api/ingredients/:id/:category', async (req, res) => {
     const ingredients = await Ingredients.find({
         location: req.params.id
@@ -51,9 +68,16 @@ router.get('/api/ingredients/:id/:category', async (req, res) => {
 
 router.get('/api/ingredientsname/:id/:name', async (req, res) => {
     const ingredients = await Ingredients.find({
-        location: req.params.id,
         name: req.params.name
     });
+
+    let selectedIngredients = []
+
+    for (let i = 0; i < ingredients.length; i++) {
+        if (ingredients[0].location == req.params.id) {
+            selectedIngredients.push(ingredients[i])
+        }
+    }
 
     res.send(ingredients);
 });
@@ -62,7 +86,6 @@ router.get("/api/ingredient/:id", async (req, res) => {
     const ingredient = await Ingredients.findById(req.params.id);
     res.json(ingredient);
 });
-
 
 
 //Add a ingredient
@@ -89,6 +112,17 @@ router.post('/api/addingredient', (req, res) => {
         });
 });
 
+
+
+// DELETE USER ACCOUNT
+router.delete('/api/deleteingredient/:id', async (req, res) => {
+    await Ingredients.findByIdAndDelete(req.params.id)
+        .then(response => res.json(response))
+        .catch(error => res.status(500).json(error))
+});
+
+
+
 router.patch('/api/updateingredient/:id', async (req, res) => {
     console.log(req.params)
     console.log(req.body)
@@ -110,6 +144,8 @@ router.patch('/api/updateingredient/:id', async (req, res) => {
 
     res.json(ingredient);
 });
+
+
 
 
 module.exports = router;
