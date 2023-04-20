@@ -173,22 +173,35 @@ export class DialogOverviewExampleDialog {
 
     for (let i = 0; i < this.data.gelato.ingredients.length; i++) {
       const element = this.data.gelato.ingredients[i];
-      ingredientsData.push(this.loadIngredients(this.data.location, element))
+      this.loadIngredients(this.data.location, encodeURIComponent(element))
+      const dataIn = this.ingredientSingle
+
+      console.log(element);
+      console.log(dataIn);
+
+
+      ingredientsData.push(dataIn)
 
     }
     this.ingredientsAvaliable = ingredientsData;
+    // console.log(ingredientsData);
+
 
   }
 
   ingredientsAvaliable: any = {};
+  ingredientSingle: any = {};
 
   loadIngredients(id: any, category: any) {
+    let newdata = {}
     this.http
       .get("http://localhost:3000/api/ingredientsname/" + id + "/" + category)
       .subscribe((loadingredients: any) => {
         console.log(loadingredients[0]);
-        return loadingredients[0];
+        this.ingredientSingle = loadingredients[0]
       })
+    return this.ingredientSingle;
+
   }
 
   onNoClick(): void {

@@ -32,22 +32,22 @@
 <br />
 <div align="center">
   <a href="https://github.com/shanrescheepers/CoolCultureCo_2023">
-    <img src="./CoolCultureCo-App/src/assets/ccc-assets/ccc-logo 1.png" alt="Logo" width="80" height="80">
+    <img src="./CoolCultureCo-App/src/assets/ccc-assets/ccc-logo 1.png" alt="Logo" width="120" height="120">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Cool Culture co - App</h3>
 
   <p align="center">
-    project_description
+    This project was built in order to manage gelato stock, as well as create presetted gelatos within 3 locations with available stock. If no stock was available, management is capable of updating relevant stock and create desired gelatos. The convenient, user friendly and purpose driven (stocktake) App.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <!-- <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/shanrescheepers/CoolCultureCo_2023">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/shanrescheepers/CoolCultureCo_2023/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/shanrescheepers/CoolCultureCo_2023/issues">Request Feature</a>
   </p>
 </div>
 
@@ -94,14 +94,11 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Angular](https://angular.io/cli)
+* [Angular Material](https://material.angular.io/)
+* [Figma](https://www.figma.com/)
+* [The Noun Project Icons](https://thenounproject.com/)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -109,70 +106,79 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 <!-- GETTING STARTED -->
 ## Getting Started
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) 
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/shanrescheepers/CoolCultureCo_2023.git
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+2. Install NPM and ANGULAR
+* npm
+  ```sh
+  npm install npm@latest -g
+  npm install -g @angular/cli
+
+  ```
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usage and Resources that helped me
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+_Resources that helped me [Documentation](https://www.concretepage.com/angular-2/angular-2-ngif-example#:~:text=NgIf%20is%20an%20angular%20directive,not%20be%20added%20to%20DOM.)_
+_Resources that helped me [Documentation](https://stackblitz.com/run?file=src%2Fapp%2Fdialog-data-example.ts)_
+_Resources that helped me [Documentation](https://stackoverflow.com/questions/34878771/angular-encode-space-as-not-20)_
+_Resources that helped me [Documentation](https://ultimatecourses.com/blog/angular-ngif-else-then)_
+_Resources that helped me [Documentation](https://angular.io/api/common/NgIf)_
+_Resources that helped me [Documentation](https://dev.to/ayyash/rxjs-based-state-management-in-angular-part-i-22f9)_
+_Design Resources that helped me [Dribbble](https://dribbble.com/)_
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
 
 
 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Don't forget to give the project a star! Thanks again, cheers!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -188,7 +194,7 @@ Don't forget to give the project a star! Thanks again!
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
+Owned by Shanré Scheepers 2023
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -196,9 +202,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Shanré Scheepers - [@LinkedIn_handle](https://www.linkedin.com/in/shanr%C3%A9-scheepers-09185b213/) - shanrescheepers@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/github_username/repo_name](https://github.com/shanrescheepers/CoolCultureCo_2023)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -207,9 +213,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* See above at RESOURCES
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -217,16 +221,18 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/shanrescheepers/CoolCultureCo_2023.svg?style=for-the-badge
+[contributors-url]: https://github.com/shanrescheepers/CoolCultureCo_2023/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/shanrescheepers/CoolCultureCo_2023.svg?style=for-the-badge
+[forks-url]: https://github.com/shanrescheepers/CoolCultureCo_2023/network/members
+[stars-shield]: https://img.shields.io/github/stars/shanrescheepers/CoolCultureCo_2023.svg?style=for-the-badge
+[stars-url]: https://github.com/gshanrescheepers/CoolCultureCo_2023/stargazers
+[issues-shield]: https://img.shields.io/github/issues/shanrescheepers/CoolCultureCo_2023.svg?style=for-the-badge
+[issues-url]: https://github.com/shanrescheepers/CoolCultureCo_2023/issues
+[license-shield]: https://img.shields.io/github/license/gshanrescheepers/CoolCultureCo_2023.svg?style=for-the-badge
+[license-url]: https://github.com/shanrescheepers/CoolCultureCo_2023/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[linkedin-url]: hhttps://www.linkedin.com/in/shanr%C3%A9-scheepers-09185b213/
+[product-screenshot]: ./CoolCultureCo-App/src/assets/ccc-assets/productImage1.png
+[product-screenshot]: ./CoolCultureCo-App/src/assets/ccc-assets/productImage2.png
+[product-screenshot]: ./CoolCultureCo-App/src/assets/ccc-assets/productImage3.png
