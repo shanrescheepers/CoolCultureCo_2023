@@ -24,6 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { BodyComponent } from './body/body.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { DialogOverviewExampleDialog } from './create/create.component';
 
 @NgModule({
 
@@ -38,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     AuthenticationQuestionsComponent,
     LandingComponent,
     FourohfourComponent,
-    BodyComponent
+    BodyComponent,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     MatIconModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

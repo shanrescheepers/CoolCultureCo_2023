@@ -60,8 +60,8 @@
             background-image: url(../../assets/ccc-assets/ccc-logo.svg);
             background-repeat: no-repeat;
             background-size: contain;
-            height: 200px;
-            width: 200px;
+            height: 100px;
+            width: 100px;
             margin-top: 10px;
             margin-left: 100px;
         }
@@ -132,7 +132,7 @@
                 text-align: left;
 
                 width: 200px;
-                grid-template-rows: 100px 50px 230px 40px 40px 80px 80px 50px 50px;
+                grid-template-rows: 100px 50px 230px 40px 50px 113px 61px 20px 50px;
 
                 &__heading {
                     font-family: Welcome;
@@ -144,6 +144,7 @@
                     color: white;
                     text-align: center;
                     padding-left: 32px;
+
                 }
 
                 &__scribble {
@@ -155,28 +156,39 @@
 
                 }
 
-                &__flavour {
-                    width: 300px;
+                &__flavour1 {
+                    width: 230px;
                     height: 215px;
+                    display: grid;
                     background-size: cover;
-                    text-align: center;
-                    margin-left: 50px;
                     background-repeat: no-repeat;
-                    background-image: url("../../assets/gelatos/flavour-of-the-week.svg");
+                    text-align: center;
+                    justify-self: center;
+                    justify-items: center;
+                    justify-content: center;
+                    align-content: center;
+                    margin-left: 80px;
+                    border-radius: 10px;
+                    background-repeat: no-repeat;
+                    box-shadow: 10px 10px 20px 7px #ffffffca;
+                    -webkit-box-shadow: 10px 10px 20px 7px #ffffffc6;
+                    -moz-box-shadow: 10px 10px 20px 7px #ffffffbd;
+                    // background-image: url("../../assets/gelatos/flavour-of-the-week.svg");
                 }
 
                 &__h3 {
                     font-family: Heading;
                     padding-left: 60px;
                     letter-spacing: 1.5px;
-                    color: #fff;
+                    color: #000000;
                     font-size: 18px;
                 }
 
                 &__originalornot {
-                    font-family: BarlowRegular;
+                    font-family: Heading;
                     padding-left: 60px;
-                    color: #fff;
+                    color: #98587B;
+                    font-weight: bold;
                 }
 
                 &__description {
@@ -258,6 +270,8 @@
             grid-template-columns: auto;
             grid-template-rows: 1fr 1fr;
 
+
+
             &__item {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -294,14 +308,15 @@
             width: 120px;
             height: 150px;
             display: grid;
+
             text-align: center;
             background-color: #F6F2EF;
             justify-items: center;
             font-size: 10px;
             color: #2b2b2b;
-            grid-template-rows: 45px 20px 38px auto;
+            grid-template-rows: 65px 38px 16px auto;
             margin: 0px;
-            padding: 20px;
+
 
             &__p {
                 margin-left: -14px;
@@ -322,17 +337,20 @@
                 text-align: center;
 
                 &__stock {
+                    color: #060606;
+                    font-weight: lighter;
+                    font-family: Heading;
                     display: grid;
-                    color: #1c1c1c;
-                    border-color: 1px inside solid #3cdfdccb;
-
+                    background-color: #F2A3B9;
                     height: 20px;
-                    width: 50px;
+                    width: 40px;
+                    text-align: center;
                     border-radius: 5px;
-                    align-content: center;
                     border-bottom-left-radius: 0px;
                     border-top-right-radius: 0px;
-                    font-family: Barlow;
+                    font-size: 14px;
+
+                    align-content: center;
 
                 }
 
@@ -341,7 +359,15 @@
                     font-weight: lighter;
                     font-family: Sweet;
                     display: grid;
-                    background-color: #e97c94d4;
+                    background-image: linear-gradient(45deg,
+                            hsl(359deg 52% 62%) 0%,
+                            hsl(17deg 80% 63%) 4%,
+                            hsl(33deg 90% 59%) 12%,
+                            hsl(28deg 100% 68%) 22%,
+                            hsl(13deg 96% 78%) 35%,
+                            hsl(2deg 65% 79%) 50%,
+                            hsl(354deg 70% 75%) 70%,
+                            hsl(347deg 71% 70%) 100%);
                     height: 20px;
                     width: 75px;
                     text-align: center;
@@ -372,13 +398,13 @@
 
             }
 
-            &__image,
-            img {
-                height: 50px;
-                width: 40px;
-                background-repeat: no-repeat;
-                background-size: contain;
-            }
+            // &__image,
+            // img {
+            //     height: 50px;
+            //     width: 40px;
+            //     background-repeat: no-repeat;
+            //     background-size: contain;
+            // }
 
         }
 
@@ -396,4 +422,8 @@
     color: #060606 !important;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.dialog {
+    background-color: #98587B;
 }

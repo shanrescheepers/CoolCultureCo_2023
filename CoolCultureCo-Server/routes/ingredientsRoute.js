@@ -16,6 +16,7 @@ router.get('/api/ingredients/:id', async (req, res) => {
 
     res.send(ingredients);
 });
+
 router.get('/api/ingredients/:id/:category', async (req, res) => {
     const ingredients = await Ingredients.find({
         location: req.params.id
@@ -45,6 +46,16 @@ router.get('/api/ingredients/:id/:category', async (req, res) => {
     }
 
     res.send(catIngredient);
+});
+
+
+router.get('/api/ingredientsname/:id/:name', async (req, res) => {
+    const ingredients = await Ingredients.find({
+        location: req.params.id,
+        name: req.params.name
+    });
+
+    res.send(ingredients);
 });
 
 router.get("/api/ingredient/:id", async (req, res) => {

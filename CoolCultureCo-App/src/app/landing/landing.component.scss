@@ -44,11 +44,25 @@
     margin: 0px;
     padding: 0px;
 
+    &__images {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        justify-self: center;
+        grid-gap: 100px;
+
+
+        &__logo1 img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
     &__logo {
         margin: 8px;
     }
 
-    &__login {
+    &__login1 {
         text-align: right;
         width: 140px;
         height: 40px;
@@ -57,11 +71,35 @@
         // margin-top: -170px;
         padding-right: 20px;
         border: 0px;
-        background-color: transparent;
+
         cursor: pointer;
-        font-family: BarlowRegular;
+        font-family: Barlow;
         font-weight: 200;
+        color: #351717;
+        letter-spacing: 1px;
         justify-content: right;
+        background-image: linear-gradient(45deg,
+                hsl(347deg 71% 70%) 0%,
+                hsl(352deg 62% 67%) 29%,
+                hsl(357deg 54% 63%) 55%,
+                hsl(1deg 54% 67%) 72%,
+                hsl(3deg 59% 75%) 84%,
+                hsl(8deg 82% 79%) 91%,
+                hsl(23deg 100% 72%) 96%,
+                hsl(39deg 88% 56%) 100%);
+        text-align: center;
+        width: fit-content;
+        padding: 4px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    &__login1:hover {
+        background-image: #E76A86;
+        text-align: center;
+        width: fit-content;
+        padding: 4px;
+        border-radius: 5px;
     }
 
     &__inner {

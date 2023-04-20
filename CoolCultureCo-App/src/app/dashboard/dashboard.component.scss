@@ -59,19 +59,19 @@
             background-image: url(../../assets/ccc-assets/melt2.svg);
             background-repeat: no-repeat;
             background-size: contain;
-
-            height: 130px;
+            margin-top: -5px;
+            height: 120px;
             width: 250px;
 
             &__input {
                 display: grid;
                 width: 150px;
-                padding-top: 8px;
+                padding-top: 7px;
                 height: 50px;
                 border-radius: 10px;
                 text-align: center;
                 align-items: center;
-                padding-left: 20px;
+                padding-left: 13px;
                 z-index: 1;
 
 
@@ -110,8 +110,11 @@
             display: grid;
             width: 400px;
             border-radius: 30px;
-            background: linear-gradient(318deg, rgba(255, 255, 255, 1) 15%, rgba(241, 170, 191, 0.659) 46%, rgba(243, 84, 124, 0.391) 67%);
-            margin-left: -40px;
+            background-image:
+                linear-gradient(45deg,
+                    hsl(352deg 62% 67%) 29%,
+                    hsl(357deg 54% 63%) 55%) hsl(347deg 71% 70%) 10%;
+            margin-left: -60px;
 
             &__inner {
                 display: grid;
