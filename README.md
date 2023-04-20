@@ -86,7 +86,6 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -156,21 +155,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 <!-- USAGE EXAMPLES -->
-## Usage and Resources that helped me
-
-_Resources that helped me [Documentation](https://www.concretepage.com/angular-2/angular-2-ngif-example#:~:text=NgIf%20is%20an%20angular%20directive,not%20be%20added%20to%20DOM.)_
-_Resources that helped me [Documentation](https://stackblitz.com/run?file=src%2Fapp%2Fdialog-data-example.ts)_
-_Resources that helped me [Documentation](https://stackoverflow.com/questions/34878771/angular-encode-space-as-not-20)_
-_Resources that helped me [Documentation](https://ultimatecourses.com/blog/angular-ngif-else-then)_
-_Resources that helped me [Documentation](https://angular.io/api/common/NgIf)_
-_Resources that helped me [Documentation](https://dev.to/ayyash/rxjs-based-state-management-in-angular-part-i-22f9)_
-_Design Resources that helped me [Dribbble](https://dribbble.com/)_
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 
 
@@ -213,7 +197,14 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* See above at RESOURCES
+
+* _Resources that helped me [ngif](https://www.concretepage.com/angular-2/angular-2-ngif-example#:~:text=NgIf%20is%20an%20angular%20directive,not%20be%20added%20to%20DOM.)_ 
+* _Resources that helped me [Stackitz](https://stackblitz.com/run?file=src%2Fapp%2Fdialog-data-example.ts)_
+* _Resources that helped me [Stackoverflow](https://stackoverflow.com/questions/34878771/angular-encode-space-as-not-20)_
+* _Resources that helped me [Documentation](https://ultimatecourses.com/blog/angular-ngif-else-then)_
+* _Resources that helped me [Angilar](https://angular.io/api/common/NgIf)_
+* _Resources that helped me [angualr](https://dev.to/ayyash/rxjs-based-state-management-in-angular-part-i-22f9)_
+* _Design Resources that helped me [Dribbble](https://dribbble.com/)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
