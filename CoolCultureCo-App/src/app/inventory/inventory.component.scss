@@ -44,23 +44,24 @@
         grid-template-columns: 400px 400px auto;
 
         &__notified {
-            margin-left: 580px;
-            background-image: url(../../assets/ccc-assets/blob.svg);
+            margin-left: 347px;
+            background-image: url(../../assets/ccc-assets/Union.svg);
             background-repeat: no-repeat;
             background-size: contain;
-            width: 400px;
+            width: 500px;
             height: 170px;
-            margin-top: -70px;
+            margin-top: -60px;
             z-index: 111;
 
             &__p {
-                margin-left: 40px;
-                padding-left: 20px;
-                line-height: 30px;
-                width: 170px;
-                padding-top: 39px;
-                font-family: Summer2;
-                font-size: 20px;
+                margin-left: 60px;
+                padding-left: 60px;
+                line-height: 40px;
+                text-align: center;
+                width: 350px;
+                padding-top: 15px;
+                font-family: Summer;
+                font-size: 30px;
             }
         }
 
@@ -79,8 +80,8 @@
             background-image: url(../../assets/ccc-assets/melt2.svg);
             background-repeat: no-repeat;
             background-size: contain;
-
-            height: 110px;
+            margin-top: -10px;
+            height: 120px;
             width: 250px;
 
             &__input {
@@ -92,9 +93,9 @@
                 border-radius: 15px;
                 text-align: center;
                 align-items: center;
-                padding-left: 8px;
+                padding-left: 15px;
                 z-index: 1;
-
+                padding-top: 6px;
 
                 &__text {
                     color: #111;
@@ -130,8 +131,11 @@
             background-repeat: no-repeat;
             background-size: contain;
             margin-left: -200px;
-            height: 110px;
+            height: 130px;
             width: 200px;
+            margin-top: -3px;
+            padding-top: 5px;
+            padding-left: 4px;
         }
     }
 
@@ -176,10 +180,18 @@
 
                     &__create {
                         color: #060606;
-                        font-weight: lighter;
+                        font-weight: normal;
                         font-family: Sweet;
 
-                        background-color: #e97c94d4;
+                        background-image: linear-gradient(45deg,
+                                hsl(359deg 52% 62%) 0%,
+                                hsl(17deg 80% 63%) 4%,
+                                hsl(33deg 90% 59%) 12%,
+                                hsl(28deg 100% 68%) 22%,
+                                hsl(13deg 96% 78%) 35%,
+                                hsl(2deg 65% 79%) 50%,
+                                hsl(354deg 70% 75%) 70%,
+                                hsl(347deg 71% 70%) 100%);
                         height: 35px;
                         width: 75px;
                         text-align: center;
@@ -196,7 +208,15 @@
                         font-weight: lighter;
                         font-family: Sweet;
 
-                        background-color: #e85373d4;
+                        background-image: linear-gradient(45deg,
+                                hsl(347deg 71% 70%) 0%,
+                                hsl(352deg 62% 67%) 29%,
+                                hsl(357deg 54% 63%) 55%,
+                                hsl(1deg 54% 67%) 72%,
+                                hsl(3deg 59% 75%) 84%,
+                                hsl(8deg 82% 79%) 91%,
+                                hsl(23deg 100% 72%) 96%,
+                                hsl(39deg 88% 56%) 100%);
                         height: 35px;
                         width: 75px;
                         text-align: center;
